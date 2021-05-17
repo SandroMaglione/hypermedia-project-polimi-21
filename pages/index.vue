@@ -37,6 +37,18 @@ const navigation = [
 ]
 
 export default Vue.extend({
+  beforeMount() {
+    this.letMeTry()
+  },
+
+  methods: {
+    async letMeTry() {
+      console.log('LET MY TRY')
+      let { data: area, error } = await this.$supabase.from('area').select('*')
+      console.log(area)
+    },
+  },
+
   components: {
     HeroSection,
     GridSection,
