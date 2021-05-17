@@ -40,10 +40,10 @@
                 md:text-6xl
               "
             >
-              <span class="block xl:inline">Data to enrich your</span>
+              <span class="block xl:inline">We are the company</span>
               {{ ' ' }}
               <span class="block text-indigo-600 xl:inline"
-                >online business</span
+                >you are looking for</span
               >
             </h1>
             <p

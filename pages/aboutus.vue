@@ -27,6 +27,7 @@
       buttontext="View All"
       :posts="postsAreas"
     />
+    <testimonials-section />
     <GridSection
       title="Partners"
       subtitle="Partners of the company"
@@ -38,13 +39,15 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import FeatureSection from '../components/FeatureSection'
-import GridSection from '../components/GridSection'
+import FeatureSection from '~/components/FeatureSection.vue'
+import GridSection from '~/components/GridSection.vue'
+import TestimonialsSection from '~/components/TestimonialsSection.vue'
 
 export default Vue.extend({
   components: {
     FeatureSection,
     GridSection,
+    TestimonialsSection,
   },
   layout: 'page',
   data() {
