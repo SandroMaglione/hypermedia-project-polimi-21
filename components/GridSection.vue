@@ -22,15 +22,19 @@
       <div
         class="mt-12 grid gap-16 pt-12 lg:grid-cols-3 lg:gap-x-5 lg:gap-y-12"
       >
-        <div v-for="post in posts" :key="post.title">
+        <div v-for="post in posts" :key="post.name">
           <div class="flex-shrink-0">
-            <img class="h-48 w-full object-cover" :src="post.imageUrl" alt="" />
+            <img
+              class="h-48 w-full object-cover"
+              :src="post.image_url"
+              alt=""
+            />
           </div>
           <div class="flex-1 bg-white p-6 flex flex-col justify-between">
             <div class="flex-1">
               <a :href="post.href" class="block">
                 <p class="text-xl font-semibold text-gray-900">
-                  {{ post.title }}
+                  {{ post.name }}
                 </p>
               </a>
             </div>
