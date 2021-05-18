@@ -1,42 +1,44 @@
 <template>
   <div>
     <header-menu />
-    <div class="p-8">
+    <div class="bg-white pb-20 px-8 sm:px-12 lg:pt-10 lg:pb-28 lg:px-16">
       <orientation-info
         section="Area / Domotics"
         link1="Areas"
         link2="Managers"
       />
       <div class="my-10">
-        <div class="flex items-center gap-4">
-          <span>Left</span>
-          <span>Right</span>
-        </div>
         <div class="flex">
-          <div class="h-60 w-60 bg-gray-300 border border-gray-400"></div>
-          <div>
-            <h2>{{ singleMember.name }}</h2>
-            <span>Company name</span>
-            <span>Personal quote</span>
+          <div
+            :style="{ backgroundImage: `url(${singleMember.image_url})` }"
+            class="
+              bg-cover
+              h-60
+              w-60
+              bg-gray-300
+              border border-gray-400
+              rounded-lg
+              shadow-lg
+            "
+          ></div>
+          <div class="p-10">
+            <h2 class="font-bold text-5xl tracking-wider">
+              {{ singleMember.name + ' ' + singleMember.surname }}
+            </h2>
+            <p class="font-medium text-lg">{{ singleMember.role }}</p>
+            <p class="font-light text-md">{{ singleMember.quote }}</p>
           </div>
         </div>
       </div>
-      <div>
-        <section-title title="Bio" subtitle="Some bio" />
-        <div class="mt-10">
-          <span>Some bio</span>
+      <div class="flex flex-col gap-10">
+        <div>
+          <section-title title="Bio" :subtitle="singleMember.bio" />
         </div>
-      </div>
-      <div>
-        <section-title title="Education" subtitle="Some bio" />
-        <div class="mt-10">
-          <span>Some bio</span>
+        <div>
+          <section-title title="Education" :subtitle="singleMember.education" />
         </div>
-      </div>
-      <div>
-        <section-title title="Work" subtitle="Some bio" />
-        <div class="mt-10">
-          <span>Some bio</span>
+        <div>
+          <section-title title="Work" :subtitle="singleMember.work" />
         </div>
       </div>
     </div>
@@ -51,6 +53,11 @@ import OrientationInfo from '~/components/OrientationInfo.vue'
 import SectionTitle from '~/components/SectionTitle.vue'
 export default {
   components: { SectionTitle, HeaderMenu, OrientationInfo, FeatureSection },
+  data() {
+    return {
+      singleMember: {},
+    }
+  },
   beforeMount() {
     const myMemberId = this.$route.params.singlemember
     this.getSingleMember(myMemberId)
@@ -58,18 +65,13 @@ export default {
 
   methods: {
     async getSingleMember(myMemberId) {
-      let { data: member, error } = await this.$supabase
+      const { data: member, error } = await this.$supabase
         .from('member')
         .select('*')
         .eq('id', myMemberId)
         .single()
       this.singleMember = member
     },
-  },
-  data() {
-    return {
-      singleMember: {},
-    }
   },
 }
 </script>

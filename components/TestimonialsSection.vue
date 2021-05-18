@@ -1,5 +1,5 @@
 <template>
-  <div class="p-8">
+  <div class="bg-white pt-16 pb-20 px-8 sm:px-12 lg:pt-24 lg:pb-28 lg:px-16">
     <section-title title="Testimonial" subtitle="Some test" />
     <div class="mt-10">
       <div v-for="v in [1, 2, 3]" :key="v" class="flex">
