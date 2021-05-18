@@ -85,11 +85,11 @@
 import Vue from 'vue'
 
 const navigation = [
-  { name: 'Home', href: 'index' },
-  { name: 'Areas', href: 'areas' },
-  { name: 'People', href: 'people' },
-  { name: 'Products', href: 'products' },
-  { name: 'About us', href: 'aboutus' },
+  { name: 'Home', href: '/index' },
+  { name: 'Areas', href: '/areas' },
+  { name: 'People', href: '/people' },
+  { name: 'Products', href: '/products' },
+  { name: 'About us', href: '/aboutus' },
   { name: 'Contact us', href: '#' },
 ]
 export default Vue.extend({

@@ -9,17 +9,19 @@
           :key="member.id"
           class="flex flex-col bg-gray-50 border border-gray-400"
         >
-          <div class="w-full h-48 bg-gray-300">
-            <img
-              class="h-48 w-full object-cover"
-              :src="member.image_url"
-              alt=""
-            />
-          </div>
-          <div class="p-10">
-            <h2>{{ member.name }}</h2>
-            <span>{{ member.surname }}</span>
-          </div>
+          <a :href="hrefLink(member.id)">
+            <div class="w-full h-48 bg-gray-300">
+              <img
+                class="h-48 w-full object-cover"
+                :src="member.image_url"
+                alt=""
+              />
+            </div>
+            <div class="p-10">
+              <h2>{{ member.name }}</h2>
+              <span>{{ member.surname }}</span>
+            </div>
+          </a>
         </div>
       </div>
     </div>
@@ -42,6 +44,9 @@ export default {
         .from('member')
         .select('*')
       this.postsMembers = members
+    },
+    hrefLink(id) {
+      return 'member/' + id
     },
   },
   data() {
