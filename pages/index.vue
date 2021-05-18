@@ -6,6 +6,7 @@
       subtitle="Main areas of the company"
       buttontext="Learn more"
       href="/areas"
+      subhref="/area"
       :posts="postsAreas"
     />
     <GridSection
@@ -13,6 +14,7 @@
       subtitle="Team of the company"
       buttontext="Learn more"
       href="/people"
+      subhref="/member"
       :posts="postsTeams"
     />
     <GridSection
@@ -20,6 +22,7 @@
       subtitle="Products of the company"
       buttontext="Learn more"
       href="/products"
+      subhref="/product"
       :posts="postsProducts"
     />
   </div>

@@ -30,7 +30,7 @@
           </div>
           <div class="flex-1 bg-white px-2 py-3 flex flex-col justify-between">
             <div class="flex-1">
-              <a :href="post.href" class="block">
+              <a :href="subhrefLink(post.id)" class="block">
                 <p class="text-xl font-semibold text-gray-900">
                   {{ post.name }}
                 </p>
@@ -89,6 +89,10 @@ export default Vue.extend({
       type: String,
       required: true,
     },
+    subhref: {
+      type: String,
+      required: true,
+    },
     posts: {
       type: Array,
       required: true,
@@ -96,6 +100,11 @@ export default Vue.extend({
   },
   data() {
     return {}
+  },
+  methods: {
+    subhrefLink(id: string) {
+      return this.subhref + '/' + id
+    },
   },
 })
 </script>
