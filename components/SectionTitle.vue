@@ -5,7 +5,7 @@
     >
       {{ title }}
     </h2>
-    <p class="mt-3 text-xl text-gray-500 sm:mt-4">
+    <p class="mt-1 text-xl text-gray-600 sm:mt-2">
       {{ subtitle }}
     </p>
   </div>

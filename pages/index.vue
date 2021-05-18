@@ -5,18 +5,21 @@
       title="Areas"
       subtitle="Main areas of the company"
       buttontext="Learn more"
+      href="/areas"
       :posts="postsAreas"
     />
     <GridSection
       title="Team"
       subtitle="Team of the company"
       buttontext="Learn more"
+      href="/people"
       :posts="postsTeams"
     />
     <GridSection
       title="Products"
       subtitle="Products of the company"
       buttontext="Learn more"
+      href="/products"
       :posts="postsProducts"
     />
   </div>
@@ -37,31 +40,6 @@ const navigation = [
 ]
 
 export default Vue.extend({
-  beforeMount() {
-    this.getAreas()
-    this.getTeams()
-    this.getProducts()
-  },
-
-  methods: {
-    async getAreas() {
-      let { data: areas, error } = await this.$supabase.from('area').select('*')
-      this.postsAreas = areas
-    },
-
-    async getTeams() {
-      let { data: teams, error } = await this.$supabase.from('team').select('*')
-      this.postsTeams = teams
-    },
-
-    async getProducts() {
-      let { data: products, error } = await this.$supabase
-        .from('product')
-        .select('*')
-      this.postsProducts = products
-    },
-  },
-
   components: {
     HeroSection,
     GridSection,
@@ -74,6 +52,34 @@ export default Vue.extend({
       postsTeams: [],
       postsProducts: [],
     }
+  },
+  beforeMount() {
+    this.getAreas()
+    this.getTeams()
+    this.getProducts()
+  },
+
+  methods: {
+    async getAreas() {
+      const { data: areas, error } = await this.$supabase
+        .from('area')
+        .select('*')
+      this.postsAreas = areas
+    },
+
+    async getTeams() {
+      const { data: teams, error } = await this.$supabase
+        .from('team')
+        .select('*')
+      this.postsTeams = teams
+    },
+
+    async getProducts() {
+      const { data: products, error } = await this.$supabase
+        .from('product')
+        .select('*')
+      this.postsProducts = products
+    },
   },
 })
 </script>
