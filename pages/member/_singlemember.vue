@@ -15,7 +15,7 @@
         <div class="flex">
           <div class="h-60 w-60 bg-gray-300 border border-gray-400"></div>
           <div>
-            <h2>Name and surname</h2>
+            <h2>{{ singleMember.name }}</h2>
             <span>Company name</span>
             <span>Personal quote</span>
           </div>
@@ -51,6 +51,26 @@ import OrientationInfo from '~/components/OrientationInfo.vue'
 import SectionTitle from '~/components/SectionTitle.vue'
 export default {
   components: { SectionTitle, HeaderMenu, OrientationInfo, FeatureSection },
+  beforeMount() {
+    const myMemberId = this.$route.params.singlemember
+    this.getSingleMember(myMemberId)
+  },
+
+  methods: {
+    async getSingleMember(myMemberId) {
+      let { data: member, error } = await this.$supabase
+        .from('member')
+        .select('*')
+        .eq('id', myMemberId)
+        .single()
+      this.singleMember = member
+    },
+  },
+  data() {
+    return {
+      singleMember: {},
+    }
+  },
 }
 </script>
 

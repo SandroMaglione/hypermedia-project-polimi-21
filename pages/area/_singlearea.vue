@@ -26,7 +26,7 @@
             border border-gray-400
           "
         >
-          <span>Area</span>
+          <span>{{ singleArea.name }}</span>
         </div>
       </div>
       <feature-section
@@ -55,6 +55,26 @@ import OrientationInfo from '~/components/OrientationInfo.vue'
 import SectionTitle from '~/components/SectionTitle.vue'
 export default {
   components: { SectionTitle, HeaderMenu, OrientationInfo, FeatureSection },
+  beforeMount() {
+    const myAreaId = this.$route.params.singlearea
+    this.getSingleArea(myAreaId)
+  },
+
+  methods: {
+    async getSingleArea(myAreaId) {
+      let { data: area, error } = await this.$supabase
+        .from('area')
+        .select('*')
+        .eq('id', myAreaId)
+        .single()
+      this.singleArea = area
+    },
+  },
+  data() {
+    return {
+      singleArea: {},
+    }
+  },
 }
 </script>
 

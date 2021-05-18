@@ -17,8 +17,10 @@
             />
           </div>
           <div class="flex-1 p-10">
-            <h2>{{ product.name }}</h2>
-            <span>{{ product.description }}</span>
+            <a :href="hrefLink(product.id)">
+              <h2>{{ product.name }}</h2>
+              <span>{{ product.description }}</span>
+            </a>
           </div>
         </div>
       </div>
@@ -43,6 +45,9 @@ export default {
         .from('product')
         .select('*')
       this.postsProducts = products
+    },
+    hrefLink(id) {
+      return 'product/' + id
     },
   },
   data() {

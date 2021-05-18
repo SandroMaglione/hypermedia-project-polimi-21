@@ -16,8 +16,10 @@
             border border-gray-400
           "
         >
-          <h2>{{ area.name }}</h2>
-          <span>{{ area.description }}</span>
+          <a :href="hrefLink(area.id)">
+            <h2>{{ area.name }}</h2>
+            <span>{{ area.description }}</span>
+          </a>
         </div>
       </div>
     </div>
@@ -39,6 +41,9 @@ export default {
     async getAreas() {
       let { data: areas, error } = await this.$supabase.from('area').select('*')
       this.postsAreas = areas
+    },
+    hrefLink(id) {
+      return 'area/' + id
     },
   },
   data() {

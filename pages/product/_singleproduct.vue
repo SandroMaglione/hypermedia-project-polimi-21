@@ -26,7 +26,7 @@
             border border-gray-400
           "
         >
-          <span>Area</span>
+          <span>{{ singleProduct.name }}</span>
         </div>
       </div>
       <div class="my-10">
@@ -65,6 +65,26 @@ import OrientationInfo from '~/components/OrientationInfo.vue'
 import SectionTitle from '~/components/SectionTitle.vue'
 export default {
   components: { SectionTitle, HeaderMenu, OrientationInfo, FeatureSection },
+  beforeMount() {
+    const myProductId = this.$route.params.singleproduct
+    this.getSingleProduct(myProductId)
+  },
+
+  methods: {
+    async getSingleProduct(myProductId) {
+      let { data: product, error } = await this.$supabase
+        .from('product')
+        .select('*')
+        .eq('id', myProductId)
+        .single()
+      this.singleProduct = product
+    },
+  },
+  data() {
+    return {
+      singleProduct: {},
+    }
+  },
 }
 </script>
 
