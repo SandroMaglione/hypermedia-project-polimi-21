@@ -85,7 +85,7 @@
 import Vue from 'vue'
 
 const navigation = [
-  { name: 'Home', href: '/index' },
+  { name: 'Home', href: '/' },
   { name: 'Areas', href: '/areas' },
   { name: 'People', href: '/people' },
   { name: 'Products', href: '/products' },
