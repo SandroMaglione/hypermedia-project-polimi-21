@@ -15,9 +15,9 @@ Backend, API configuration, Postgresql Database, Router, Dynamic requests
 
 ## Sandro Maglione
 
-# Server and Database Technologies
+# Techinical documentation
 
-## Backend and Database
+## Server and Database
 
 For the backend technology we decided to implement Supabase, an on Cloud solution very similar to Firebase.
 
