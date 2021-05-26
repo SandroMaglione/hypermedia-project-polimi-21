@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="bg-white pb-20 px-8 sm:px-12 lg:pt-10 lg:pb-28 lg:px-16">
-      <section-title title="Areas" subtitle="Some areas" />
+      <base-section-title title="Areas" subtitle="Some areas" />
       <div class="mt-10 flex flex-col gap-8">
         <div
           v-for="area in this.postsAreas"
@@ -40,10 +40,7 @@
 </template>
 
 <script>
-import SectionTitle from '~/components/SectionTitle.vue'
-
 export default {
-  components: { SectionTitle },
   async asyncData({ $supabase }) {
     const { data: areas } = await $supabase.from('area').select()
     return { postsAreas: areas }
@@ -51,6 +48,18 @@ export default {
   data() {
     return {
       postsAreas: [],
+    }
+  },
+  head() {
+    return {
+      title: 'Areas',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'My custom description',
+        },
+      ],
     }
   },
   methods: {

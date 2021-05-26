@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="bg-white pb-20 px-8 sm:px-12 lg:pt-10 lg:pb-28 lg:px-16">
-      <orientation-info
+      <base-orientation-info
         section="Area / Domotics"
         link1="Areas"
         link2="Managers"
@@ -62,13 +62,13 @@
         </div>
       </div>
       <div class="mb-20">
-        <section-title
+        <base-section-title
           title="Product details"
           :subtitle="singleProduct.description"
         />
       </div>
       <div>
-        <section-title
+        <base-section-title
           title="Product pricing"
           subtitle="Different prices available for the product"
         />
@@ -110,11 +110,7 @@
 </template>
 
 <script>
-import OrientationInfo from '~/components/OrientationInfo.vue'
-import SectionTitle from '~/components/SectionTitle.vue'
-
 export default {
-  components: { SectionTitle, OrientationInfo },
   async asyncData({ route, $supabase }) {
     const myProductId = route.params.singleproduct
     const { data: product } = await $supabase
@@ -127,6 +123,18 @@ export default {
   data() {
     return {
       singleProduct: {},
+    }
+  },
+  head() {
+    return {
+      title: 'Single product',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'My custom description',
+        },
+      ],
     }
   },
 }

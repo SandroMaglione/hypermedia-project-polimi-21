@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="bg-white pb-20 px-8 sm:px-12 lg:pt-10 lg:pb-28 lg:px-16">
-      <orientation-info
+      <base-orientation-info
         section="Area / Domotics"
         link1="Areas"
         link2="Managers"
@@ -31,13 +31,16 @@
       </div>
       <div class="flex flex-col gap-10">
         <div>
-          <section-title title="Bio" :subtitle="singleMember.bio" />
+          <base-section-title title="Bio" :subtitle="singleMember.bio" />
         </div>
         <div>
-          <section-title title="Education" :subtitle="singleMember.education" />
+          <base-section-title
+            title="Education"
+            :subtitle="singleMember.education"
+          />
         </div>
         <div>
-          <section-title title="Work" :subtitle="singleMember.work" />
+          <base-section-title title="Work" :subtitle="singleMember.work" />
         </div>
       </div>
     </div>
@@ -45,11 +48,7 @@
 </template>
 
 <script>
-import OrientationInfo from '~/components/OrientationInfo.vue'
-import SectionTitle from '~/components/SectionTitle.vue'
-
 export default {
-  components: { SectionTitle, OrientationInfo },
   async asyncData({ route, $supabase }) {
     const myMemberId = route.params.singlemember
     const { data: member } = await $supabase
@@ -62,6 +61,18 @@ export default {
   data() {
     return {
       singleMember: {},
+    }
+  },
+  head() {
+    return {
+      title: 'Single member',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'My custom description',
+        },
+      ],
     }
   },
 }

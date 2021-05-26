@@ -68,7 +68,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import SectionTitle from '../SectionTitle.vue'
+import SectionTitle from '../base/SectionTitle.vue'
 
 export default Vue.extend({
   components: { SectionTitle },

@@ -42,12 +42,15 @@ Database: PostgreSQL https://supabase.io/database
 - `section/FeatureSection.vue`: Shared between multiple routes. It contains a layout with an image on the left and a title and description on the right. Used to highlight specific section in multiple pages of the website.
 - `section/TestimonialsSection.vue`: Layout list for the testimonials section of the website (inside `aboutus.vue`).
 
-### Other
+### Base
 
-- `OrientationInfo.vue`: Components used to display information about the current and previous pages.
-- `SectionTitle.vue`: Shared style and layout for the title of each section of the website.
-- `Chat.vue`: Contains the code to display and use the chatbot in the website. It is included in all pages inside `default.vue` layout.
+- `base/OrientationInfo.vue`: Components used to display information about the current and previous pages.
+- `base/SectionTitle.vue`: Shared style and layout for the title of each section of the website.
+- `base/Chat.vue`: Contains the code to display and use the chatbot in the website. It is included in all pages inside `default.vue` layout.
 
 ## Plugins
+
+- `supabase`: Backend-as-a-service plugin. Includes functions to fetch data from backend.
+- `mmcc`: Setup for chatbot functionalities.
 
 # Additional comments

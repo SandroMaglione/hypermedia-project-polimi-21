@@ -1,34 +1,34 @@
 <template>
   <div>
-    <feature-section
+    <section-feature-section
       title="This is out mission"
       desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, egestas
           tempus tellus etiam sed. Quam a scelerisque amet ullamcorper eu enim
           et fermentum, augue. Aliquet amet volutpat quisque ut interdum
           tincidunt duis."
     />
-    <feature-section
+    <section-feature-section
       title="This is out vision"
       desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, egestas
           tempus tellus etiam sed. Quam a scelerisque amet ullamcorper eu enim
           et fermentum, augue. Aliquet amet volutpat quisque ut interdum
           tincidunt duis."
     />
-    <feature-section
+    <section-feature-section
       title="We are project driven"
       desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, egestas
           tempus tellus etiam sed. Quam a scelerisque amet ullamcorper eu enim
           et fermentum, augue. Aliquet amet volutpat quisque ut interdum
           tincidunt duis."
     />
-    <grid-section
+    <section-grid-section
       title="Projects"
       subtitle="Projects of the company"
       buttontext="View All"
       :posts="postsAreas"
     />
-    <testimonials-section />
-    <grid-section
+    <section-testimonials-section />
+    <section-grid-section
       title="Partners"
       subtitle="Partners of the company"
       buttontext="View All"
@@ -39,16 +39,8 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import FeatureSection from '~/components/section/FeatureSection.vue'
-import GridSection from '~/components/section/GridSection.vue'
-import TestimonialsSection from '~/components/section/TestimonialsSection.vue'
 
 export default Vue.extend({
-  components: {
-    FeatureSection,
-    GridSection,
-    TestimonialsSection,
-  },
   data() {
     return {
       postsAreas: [
@@ -151,6 +143,18 @@ export default Vue.extend({
               'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
           },
           readingTime: '11 min',
+        },
+      ],
+    }
+  },
+  head() {
+    return {
+      title: 'About us',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'My custom description',
         },
       ],
     }

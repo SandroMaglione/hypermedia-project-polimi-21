@@ -3,7 +3,7 @@
     <div class="bg-white pb-20 px-8 sm:px-12 lg:pt-10 lg:pb-28 lg:px-16">
       <div class="flex items-center">
         <div class="flex-1">
-          <section-title title="Products" subtitle="Some products" />
+          <base-section-title title="Products" subtitle="Some products" />
         </div>
         <div class="flex-none">
           <input
@@ -52,10 +52,7 @@
 </template>
 
 <script>
-import SectionTitle from '~/components/SectionTitle.vue'
-
 export default {
-  components: { SectionTitle },
   async asyncData({ $supabase }) {
     const { data: products } = await $supabase.from('product').select()
     return { postsProducts: products }
@@ -66,7 +63,18 @@ export default {
       searchText: '',
     }
   },
-
+  head() {
+    return {
+      title: 'Products',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'My custom description',
+        },
+      ],
+    }
+  },
   computed: {
     searchProduct() {
       return this.postsProducts.filter(

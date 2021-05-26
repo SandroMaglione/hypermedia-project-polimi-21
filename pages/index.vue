@@ -1,7 +1,7 @@
 <template>
   <div>
-    <hero-section />
-    <grid-section
+    <section-hero-section />
+    <section-grid-section
       title="Areas"
       subtitle="Main areas of the company"
       buttontext="Learn more"
@@ -9,7 +9,7 @@
       subhref="/area"
       :posts="postsAreas"
     />
-    <grid-section
+    <section-grid-section
       title="Team"
       subtitle="Team of the company"
       buttontext="Learn more"
@@ -17,7 +17,7 @@
       subhref="/member"
       :posts="postsTeams"
     />
-    <grid-section
+    <section-grid-section
       title="Products"
       subtitle="Products of the company"
       buttontext="Learn more"
@@ -29,14 +29,7 @@
 </template>
 
 <script>
-import HeroSection from '~/components/section/HeroSection.vue'
-import GridSection from '~/components/section/GridSection.vue'
-
 export default {
-  components: {
-    HeroSection,
-    GridSection,
-  },
   async asyncData({ $supabase }) {
     const { data: areas } = await $supabase.from('area').select()
     const { data: teams } = await $supabase.from('team').select()
@@ -52,6 +45,18 @@ export default {
       postsAreas: [],
       postsTeams: [],
       postsProducts: [],
+    }
+  },
+  head() {
+    return {
+      title: 'Welcome to our website',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'My custom description',
+        },
+      ],
     }
   },
 }

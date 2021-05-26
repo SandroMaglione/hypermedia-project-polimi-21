@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="bg-white pb-20 px-8 sm:px-12 lg:pt-10 lg:pb-28 lg:px-16">
-      <orientation-info
+      <base-orientation-info
         section="Area / Domotics"
         link1="Areas"
         link2="Managers"
@@ -63,21 +63,20 @@
           </h1>
         </div>
       </div>
-      <feature-section
+      <section-feature-section
         title="Area description"
         :desc="singleArea.description"
       />
-      <feature-section title="More information" :desc="singleArea.more_info" />
+      <section-feature-section
+        title="More information"
+        :desc="singleArea.more_info"
+      />
     </div>
   </div>
 </template>
 
 <script>
-import FeatureSection from '~/components/section/FeatureSection.vue'
-import OrientationInfo from '~/components/OrientationInfo.vue'
-
 export default {
-  components: { OrientationInfo, FeatureSection },
   async asyncData({ route, $supabase }) {
     const myAreaId = route.params.singlearea
     const { data: area } = await $supabase
@@ -90,6 +89,18 @@ export default {
   data() {
     return {
       singleArea: {},
+    }
+  },
+  head() {
+    return {
+      title: 'Single area',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'My custom description',
+        },
+      ],
     }
   },
 }
