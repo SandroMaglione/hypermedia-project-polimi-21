@@ -1,20 +1,31 @@
-# nuxtapp
+# Group Name
 
-## Build Setup
+Nuklex
 
-```bash
-# install dependencies
-$ npm install
+# Group Members
 
-# serve with hot reload at localhost:3000
-$ npm run dev
+Andrea Cappelletti 10529039 andrea8.cappelletti@mail.polimi.it
+Sandro Maglione 10532096 sandro.maglione@mail.polimi.it
 
-# build for production and launch server
-$ npm run build
-$ npm run start
+# Contribution
 
-# generate static project
-$ npm run generate
-```
+## Andrea Cappelletti
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+Backend, API configuration, Postgresql Database, Router, Dynamic requests
+
+## Sandro Maglione
+
+# Server and Database Technologies
+
+## Backend and Database
+
+For the backend technology we decided to implement Supabase, an on Cloud solution very similar to Firebase.
+
+Server: Supabase https://supabase.io
+Database: PostgreSQL https://supabase.io/database
+
+## Components developed
+
+## Plugins
+
+# Additional comments
