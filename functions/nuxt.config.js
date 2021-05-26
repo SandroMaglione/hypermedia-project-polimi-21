@@ -23,29 +23,10 @@ module.exports = {
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
-    { src: '~/plugins/supabase.server.js', mode: 'server' },
-    { src: '~/plugins/mmcc.js', mode: 'client' },
-  ],
+  plugins: [{ src: '@/plugins/supabase.client.js' }, '~/plugins/mmcc.js'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
-  components: {
-    dirs: [
-      '~/components/',
-      {
-        path: '~/components/layout/',
-        prefix: 'layout',
-      },
-      {
-        path: '~/components/section/',
-        prefix: 'section',
-      },
-      {
-        path: '~/components/base/',
-        prefix: 'base',
-      },
-    ],
-  },
+  components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
@@ -56,7 +37,13 @@ module.exports = {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
+  modules: [
+    // https://go.nuxtjs.dev/axios
+    '@nuxtjs/axios',
+  ],
+
+  // Axios module configuration: https://go.nuxtjs.dev/config-axios
+  axios: {},
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
