@@ -1,0 +1,29 @@
+{
+  "Chat": {
+    "description": "Auto imported from components/Chat.vue"
+  },
+  "OrientationInfo": {
+    "description": "Auto imported from components/OrientationInfo.vue"
+  },
+  "SectionTitle": {
+    "description": "Auto imported from components/SectionTitle.vue"
+  },
+  "LayoutFooterSection": {
+    "description": "Auto imported from components/layout/FooterSection.vue"
+  },
+  "LayoutHeaderMenu": {
+    "description": "Auto imported from components/layout/HeaderMenu.vue"
+  },
+  "SectionFeatureSection": {
+    "description": "Auto imported from components/section/FeatureSection.vue"
+  },
+  "SectionGridSection": {
+    "description": "Auto imported from components/section/GridSection.vue"
+  },
+  "SectionHeroSection": {
+    "description": "Auto imported from components/section/HeroSection.vue"
+  },
+  "SectionTestimonialsSection": {
+    "description": "Auto imported from components/section/TestimonialsSection.vue"
+  }
+}

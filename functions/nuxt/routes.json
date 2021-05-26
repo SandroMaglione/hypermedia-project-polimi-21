@@ -1,0 +1,50 @@
+[
+  {
+    "name": "aboutus",
+    "path": "/aboutus",
+    "component": "/Users/andreacappelletti/Downloads/hypermedia-project-polimi-21/pages/aboutus.vue",
+    "chunkName": "pages/aboutus"
+  },
+  {
+    "name": "areas",
+    "path": "/areas",
+    "component": "/Users/andreacappelletti/Downloads/hypermedia-project-polimi-21/pages/areas.vue",
+    "chunkName": "pages/areas"
+  },
+  {
+    "name": "people",
+    "path": "/people",
+    "component": "/Users/andreacappelletti/Downloads/hypermedia-project-polimi-21/pages/people.vue",
+    "chunkName": "pages/people"
+  },
+  {
+    "name": "products",
+    "path": "/products",
+    "component": "/Users/andreacappelletti/Downloads/hypermedia-project-polimi-21/pages/products.vue",
+    "chunkName": "pages/products"
+  },
+  {
+    "name": "area-singlearea",
+    "path": "/area/:singlearea?",
+    "component": "/Users/andreacappelletti/Downloads/hypermedia-project-polimi-21/pages/area/_singlearea.vue",
+    "chunkName": "pages/area/_singlearea"
+  },
+  {
+    "name": "member-singlemember",
+    "path": "/member/:singlemember?",
+    "component": "/Users/andreacappelletti/Downloads/hypermedia-project-polimi-21/pages/member/_singlemember.vue",
+    "chunkName": "pages/member/_singlemember"
+  },
+  {
+    "name": "product-singleproduct",
+    "path": "/product/:singleproduct?",
+    "component": "/Users/andreacappelletti/Downloads/hypermedia-project-polimi-21/pages/product/_singleproduct.vue",
+    "chunkName": "pages/product/_singleproduct"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "/Users/andreacappelletti/Downloads/hypermedia-project-polimi-21/pages/index.vue",
+    "chunkName": "pages/index"
+  }
+]
