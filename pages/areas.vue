@@ -44,24 +44,16 @@ import SectionTitle from '~/components/SectionTitle.vue'
 
 export default {
   components: { SectionTitle },
+  async asyncData({ $supabase }) {
+    const { data: areas } = await $supabase.from('area').select()
+    return { postsAreas: areas }
+  },
   data() {
     return {
       postsAreas: [],
     }
   },
-
-  beforeMount() {
-    this.getAreas()
-  },
-
   methods: {
-    async getAreas() {
-      // @ts-ignore
-      const { data: areas, error } = await this.$supabase
-        .from('area')
-        .select('*')
-      this.postsAreas = areas
-    },
     hrefLink(id) {
       return 'area/' + id
     },

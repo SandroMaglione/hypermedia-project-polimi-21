@@ -50,26 +50,19 @@ import SectionTitle from '~/components/SectionTitle.vue'
 
 export default {
   components: { SectionTitle, OrientationInfo },
+  async asyncData({ route, $supabase }) {
+    const myMemberId = route.params.singlemember
+    const { data: member } = await $supabase
+      .from('member')
+      .select()
+      .eq('id', myMemberId)
+      .single()
+    return { singleMember: member }
+  },
   data() {
     return {
       singleMember: {},
     }
-  },
-  beforeMount() {
-    const myMemberId = this.$route.params.singlemember
-    this.getSingleMember(myMemberId)
-  },
-
-  methods: {
-    async getSingleMember(myMemberId) {
-      // @ts-ignore
-      const { data: member, error } = await this.$supabase
-        .from('member')
-        .select('*')
-        .eq('id', myMemberId)
-        .single()
-      this.singleMember = member
-    },
   },
 }
 </script>

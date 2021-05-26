@@ -55,6 +55,10 @@ import SectionTitle from '~/components/SectionTitle.vue'
 
 export default {
   components: { SectionTitle },
+  async asyncData({ $supabase }) {
+    const { data: members } = await $supabase.from('member').select()
+    return { postsMembers: members }
+  },
   data() {
     return {
       postsMembers: [],
@@ -71,19 +75,9 @@ export default {
       )
     },
   },
-  beforeMount() {
-    this.getMembers()
-  },
   methods: {
     updateSearch(e) {
       this.searchText = e.target.value
-    },
-    async getMembers() {
-      // @ts-ignore
-      const { data: members, error } = await this.$supabase
-        .from('member')
-        .select('*')
-      this.postsMembers = members
     },
     hrefLink(id) {
       return 'member/' + id

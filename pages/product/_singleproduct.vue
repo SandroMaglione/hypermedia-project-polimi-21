@@ -115,26 +115,19 @@ import SectionTitle from '~/components/SectionTitle.vue'
 
 export default {
   components: { SectionTitle, OrientationInfo },
+  async asyncData({ route, $supabase }) {
+    const myProductId = route.params.singleproduct
+    const { data: product } = await $supabase
+      .from('product')
+      .select()
+      .eq('id', myProductId)
+      .single()
+    return { singleProduct: product }
+  },
   data() {
     return {
       singleProduct: {},
     }
-  },
-  beforeMount() {
-    const myProductId = this.$route.params.singleproduct
-    this.getSingleProduct(myProductId)
-  },
-
-  methods: {
-    async getSingleProduct(myProductId) {
-      // @ts-ignore
-      const { data: product, error } = await this.$supabase
-        .from('product')
-        .select('*')
-        .eq('id', myProductId)
-        .single()
-      this.singleProduct = product
-    },
   },
 }
 </script>

@@ -56,6 +56,10 @@ import SectionTitle from '~/components/SectionTitle.vue'
 
 export default {
   components: { SectionTitle },
+  async asyncData({ $supabase }) {
+    const { data: products } = await $supabase.from('product').select()
+    return { postsProducts: products }
+  },
   data() {
     return {
       postsProducts: [],
@@ -72,21 +76,9 @@ export default {
       )
     },
   },
-
-  beforeMount() {
-    this.getProducts()
-  },
-
   methods: {
     updateSearch(e) {
       this.searchText = e.target.value
-    },
-    async getProducts() {
-      // @ts-ignore
-      const { data: products, error } = await this.$supabase
-        .from('product')
-        .select('*')
-      this.postsProducts = products
     },
     hrefLink(id) {
       return 'product/' + id

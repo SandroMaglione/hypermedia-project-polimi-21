@@ -78,26 +78,19 @@ import OrientationInfo from '~/components/OrientationInfo.vue'
 
 export default {
   components: { OrientationInfo, FeatureSection },
+  async asyncData({ route, $supabase }) {
+    const myAreaId = route.params.singlearea
+    const { data: area } = await $supabase
+      .from('area')
+      .select()
+      .eq('id', myAreaId)
+      .single()
+    return { singleArea: area }
+  },
   data() {
     return {
       singleArea: {},
     }
-  },
-  beforeMount() {
-    const myAreaId = this.$route.params.singlearea
-    this.getSingleArea(myAreaId)
-  },
-
-  methods: {
-    async getSingleArea(myAreaId) {
-      // @ts-ignore
-      const { data: area, error } = await this.$supabase
-        .from('area')
-        .select('*')
-        .eq('id', myAreaId)
-        .single()
-      this.singleArea = area
-    },
   },
 }
 </script>
