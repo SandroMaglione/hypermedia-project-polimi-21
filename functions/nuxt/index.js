@@ -14,9 +14,8 @@ import { createStore } from './store.js'
 /* Plugins */
 
 import nuxt_plugin_plugin_a1f62724 from 'nuxt_plugin_plugin_a1f62724' // Source: ./components/plugin.js (mode: 'all')
-import nuxt_plugin_axios_177866f8 from 'nuxt_plugin_axios_177866f8' // Source: ./axios.js (mode: 'all')
-import nuxt_plugin_supabaseclient_cc921214 from 'nuxt_plugin_supabaseclient_cc921214' // Source: ../plugins/supabase.client.js (mode: 'client')
-import nuxt_plugin_mmcc_2c777bc1 from 'nuxt_plugin_mmcc_2c777bc1' // Source: ../plugins/mmcc.js (mode: 'all')
+import nuxt_plugin_supabaseserver_52103180 from 'nuxt_plugin_supabaseserver_52103180' // Source: ../plugins/supabase.server.js (mode: 'server')
+import nuxt_plugin_mmcc_2c777bc1 from 'nuxt_plugin_mmcc_2c777bc1' // Source: ../plugins/mmcc.js (mode: 'client')
 
 // Component: <ClientOnly>
 Vue.component(ClientOnly.name, ClientOnly)
@@ -217,15 +216,11 @@ async function createApp(ssrContext, config = {}) {
     await nuxt_plugin_plugin_a1f62724(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_axios_177866f8 === 'function') {
-    await nuxt_plugin_axios_177866f8(app.context, inject)
+  if (process.server && typeof nuxt_plugin_supabaseserver_52103180 === 'function') {
+    await nuxt_plugin_supabaseserver_52103180(app.context, inject)
   }
 
-  if (process.client && typeof nuxt_plugin_supabaseclient_cc921214 === 'function') {
-    await nuxt_plugin_supabaseclient_cc921214(app.context, inject)
-  }
-
-  if (typeof nuxt_plugin_mmcc_2c777bc1 === 'function') {
+  if (process.client && typeof nuxt_plugin_mmcc_2c777bc1 === 'function') {
     await nuxt_plugin_mmcc_2c777bc1(app.context, inject)
   }
 
