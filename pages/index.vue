@@ -28,15 +28,24 @@
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
+<script>
 import HeroSection from '~/components/section/HeroSection.vue'
 import GridSection from '~/components/section/GridSection.vue'
 
-export default Vue.extend({
+export default {
   components: {
     HeroSection,
     GridSection,
+  },
+  async asyncData({ $supabase }) {
+    const { data: areas } = await $supabase.from('area').select()
+    const { data: teams } = await $supabase.from('team').select()
+    const { data: products } = await $supabase.from('product').select()
+    return {
+      postsAreas: areas,
+      postsTeams: teams,
+      postsProducts: products,
+    }
   },
   data() {
     return {
@@ -45,36 +54,5 @@ export default Vue.extend({
       postsProducts: [],
     }
   },
-  beforeMount() {
-    this.getAreas()
-    this.getTeams()
-    this.getProducts()
-  },
-
-  methods: {
-    async getAreas() {
-      // @ts-ignore
-      const { data: areas, error } = await this.$supabase
-        .from('area')
-        .select('*')
-      this.postsAreas = areas
-    },
-
-    async getTeams() {
-      // @ts-ignore
-      const { data: teams, error } = await this.$supabase
-        .from('team')
-        .select('*')
-      this.postsTeams = teams
-    },
-
-    async getProducts() {
-      // @ts-ignore
-      const { data: products, error } = await this.$supabase
-        .from('product')
-        .select('*')
-      this.postsProducts = products
-    },
-  },
-})
+}
 </script>
