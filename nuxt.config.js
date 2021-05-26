@@ -23,9 +23,7 @@ export default {
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
-    { src: '@/plugins/supabase.client.js' }
-  ],
+  plugins: [{ src: '@/plugins/supabase.client.js' }, '~/plugins/mmcc.js'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -49,4 +47,11 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
+
+  env: {
+    configurationId: '6ab8eced-846e-4a8f-b76e-1481bbf0ca0a',
+    supabaseKey:
+      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic2VydmljZV9yb2xlIiwiaWF0IjoxNjIxMjYxODA2LCJleHAiOjE5MzY4Mzc4MDZ9.jFt9LKNeIeJ5DZEtKIHWe71neRbSxL9TC-FmyB-0Sc8',
+    supabaseUrl: 'https://wemtonqwokryfponsnhm.supabase.co',
+  },
 }
