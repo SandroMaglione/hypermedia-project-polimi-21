@@ -1,16 +1,23 @@
 <template>
   <div>
+    <header-menu />
     <Nuxt />
     <chat :chat-list="list" />
+    <footer-section />
   </div>
 </template>
 
 <script>
 import Chat from '~/components/Chat'
 import MMCCMixin from '~/mixins/mmcc-mixin'
+import HeaderMenu from '~/components/layout/HeaderMenu.vue'
+import FooterSection from '~/components/layout/FooterSection.vue'
+
 export default {
   components: {
     Chat,
+    HeaderMenu,
+    FooterSection,
   },
   mixins: [MMCCMixin],
 }

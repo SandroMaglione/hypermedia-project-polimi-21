@@ -1,6 +1,5 @@
 <template>
   <div>
-    <header-menu />
     <div class="bg-white pb-20 px-8 sm:px-12 lg:pt-10 lg:pb-28 lg:px-16">
       <div class="flex items-center">
         <div class="flex-1">
@@ -48,15 +47,14 @@
         </div>
       </div>
     </div>
-    <footer-section />
   </div>
 </template>
 
 <script>
-import HeaderMenu from '~/components/HeaderMenu.vue'
 import SectionTitle from '~/components/SectionTitle.vue'
+
 export default {
-  components: { SectionTitle, HeaderMenu },
+  components: { SectionTitle },
   data() {
     return {
       postsMembers: [],
@@ -81,6 +79,7 @@ export default {
       this.searchText = e.target.value
     },
     async getMembers() {
+      // @ts-ignore
       const { data: members, error } = await this.$supabase
         .from('member')
         .select('*')
@@ -92,5 +91,3 @@ export default {
   },
 }
 </script>
-
-<style></style>

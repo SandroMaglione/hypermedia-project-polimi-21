@@ -68,7 +68,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import SectionTitle from './SectionTitle.vue'
+import SectionTitle from '../SectionTitle.vue'
 
 export default Vue.extend({
   components: { SectionTitle },
@@ -85,17 +85,19 @@ export default Vue.extend({
       type: String,
       required: true,
     },
-    href: {
-      type: String,
-      required: true,
-    },
-    subhref: {
-      type: String,
-      required: true,
-    },
     posts: {
       type: Array,
       required: true,
+    },
+    href: {
+      type: String,
+      required: false,
+      default: '#',
+    },
+    subhref: {
+      type: String,
+      required: false,
+      default: '#',
     },
   },
   data() {

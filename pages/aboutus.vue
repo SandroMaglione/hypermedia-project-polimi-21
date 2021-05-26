@@ -21,14 +21,14 @@
           et fermentum, augue. Aliquet amet volutpat quisque ut interdum
           tincidunt duis."
     />
-    <GridSection
+    <grid-section
       title="Projects"
       subtitle="Projects of the company"
       buttontext="View All"
       :posts="postsAreas"
     />
     <testimonials-section />
-    <GridSection
+    <grid-section
       title="Partners"
       subtitle="Partners of the company"
       buttontext="View All"
@@ -39,9 +39,9 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import FeatureSection from '~/components/FeatureSection.vue'
-import GridSection from '~/components/GridSection.vue'
-import TestimonialsSection from '~/components/TestimonialsSection.vue'
+import FeatureSection from '~/components/section/FeatureSection.vue'
+import GridSection from '~/components/section/GridSection.vue'
+import TestimonialsSection from '~/components/section/TestimonialsSection.vue'
 
 export default Vue.extend({
   components: {
@@ -49,7 +49,6 @@ export default Vue.extend({
     GridSection,
     TestimonialsSection,
   },
-  layout: 'page',
   data() {
     return {
       postsAreas: [

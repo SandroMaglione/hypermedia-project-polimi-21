@@ -1,6 +1,5 @@
 <template>
   <div>
-    <header-menu />
     <div class="bg-white pb-20 px-8 sm:px-12 lg:pt-10 lg:pb-28 lg:px-16">
       <orientation-info
         section="Area / Domotics"
@@ -42,17 +41,15 @@
         </div>
       </div>
     </div>
-    <footer-section />
   </div>
 </template>
 
 <script>
-import FeatureSection from '~/components/FeatureSection.vue'
-import HeaderMenu from '~/components/HeaderMenu.vue'
 import OrientationInfo from '~/components/OrientationInfo.vue'
 import SectionTitle from '~/components/SectionTitle.vue'
+
 export default {
-  components: { SectionTitle, HeaderMenu, OrientationInfo, FeatureSection },
+  components: { SectionTitle, OrientationInfo },
   data() {
     return {
       singleMember: {},
@@ -65,6 +62,7 @@ export default {
 
   methods: {
     async getSingleMember(myMemberId) {
+      // @ts-ignore
       const { data: member, error } = await this.$supabase
         .from('member')
         .select('*')
@@ -75,5 +73,3 @@ export default {
   },
 }
 </script>
-
-<style></style>

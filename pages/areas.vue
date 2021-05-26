@@ -1,6 +1,5 @@
 <template>
   <div>
-    <header-menu />
     <div class="bg-white pb-20 px-8 sm:px-12 lg:pt-10 lg:pb-28 lg:px-16">
       <section-title title="Areas" subtitle="Some areas" />
       <div class="mt-10 flex flex-col gap-8">
@@ -37,15 +36,14 @@
         </div>
       </div>
     </div>
-    <footer-section />
   </div>
 </template>
 
 <script>
-import HeaderMenu from '~/components/HeaderMenu.vue'
 import SectionTitle from '~/components/SectionTitle.vue'
+
 export default {
-  components: { SectionTitle, HeaderMenu },
+  components: { SectionTitle },
   data() {
     return {
       postsAreas: [],
@@ -58,6 +56,7 @@ export default {
 
   methods: {
     async getAreas() {
+      // @ts-ignore
       const { data: areas, error } = await this.$supabase
         .from('area')
         .select('*')

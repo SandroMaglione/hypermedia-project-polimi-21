@@ -1,7 +1,7 @@
 <template>
   <div>
-    <HeroSection />
-    <GridSection
+    <hero-section />
+    <grid-section
       title="Areas"
       subtitle="Main areas of the company"
       buttontext="Learn more"
@@ -9,7 +9,7 @@
       subhref="/area"
       :posts="postsAreas"
     />
-    <GridSection
+    <grid-section
       title="Team"
       subtitle="Team of the company"
       buttontext="Learn more"
@@ -17,7 +17,7 @@
       subhref="/member"
       :posts="postsTeams"
     />
-    <GridSection
+    <grid-section
       title="Products"
       subtitle="Products of the company"
       buttontext="Learn more"
@@ -30,27 +30,16 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import HeroSection from '../components/HeroSection'
-import GridSection from '../components/GridSection'
-
-const navigation = [
-  { name: 'Home', href: '#' },
-  { name: 'Areas', href: '#' },
-  { name: 'People', href: '#' },
-  { name: 'Products', href: '#' },
-  { name: 'About us', href: '#' },
-  { name: 'Contact us', href: '#' },
-]
+import HeroSection from '~/components/section/HeroSection.vue'
+import GridSection from '~/components/section/GridSection.vue'
 
 export default Vue.extend({
   components: {
     HeroSection,
     GridSection,
   },
-  layout: 'page',
   data() {
     return {
-      navigation,
       postsAreas: [],
       postsTeams: [],
       postsProducts: [],
@@ -64,6 +53,7 @@ export default Vue.extend({
 
   methods: {
     async getAreas() {
+      // @ts-ignore
       const { data: areas, error } = await this.$supabase
         .from('area')
         .select('*')
@@ -71,6 +61,7 @@ export default Vue.extend({
     },
 
     async getTeams() {
+      // @ts-ignore
       const { data: teams, error } = await this.$supabase
         .from('team')
         .select('*')
@@ -78,6 +69,7 @@ export default Vue.extend({
     },
 
     async getProducts() {
+      // @ts-ignore
       const { data: products, error } = await this.$supabase
         .from('product')
         .select('*')

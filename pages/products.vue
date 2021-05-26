@@ -1,6 +1,5 @@
 <template>
   <div>
-    <header-menu />
     <div class="bg-white pb-20 px-8 sm:px-12 lg:pt-10 lg:pb-28 lg:px-16">
       <div class="flex items-center">
         <div class="flex-1">
@@ -49,15 +48,14 @@
         </div>
       </div>
     </div>
-    <footer-section />
   </div>
 </template>
 
 <script>
-import HeaderMenu from '~/components/HeaderMenu.vue'
 import SectionTitle from '~/components/SectionTitle.vue'
+
 export default {
-  components: { SectionTitle, HeaderMenu },
+  components: { SectionTitle },
   data() {
     return {
       postsProducts: [],
@@ -84,6 +82,7 @@ export default {
       this.searchText = e.target.value
     },
     async getProducts() {
+      // @ts-ignore
       const { data: products, error } = await this.$supabase
         .from('product')
         .select('*')
