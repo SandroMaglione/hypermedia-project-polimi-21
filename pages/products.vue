@@ -1,22 +1,12 @@
 <template>
   <div>
     <div class="bg-white pb-20 px-8 sm:px-12 lg:pt-10 lg:pb-28 lg:px-16">
-      <div class="flex items-center">
-        <div class="flex-1">
-          <base-section-title title="Products" subtitle="Some products" />
-        </div>
-        <div class="flex-none">
-          <input
-            id="search"
-            type="text"
-            name="search"
-            placeholder="Search by name"
-            class="px-5 py-1.5 border border-gray-200 tracking-wide"
-            :value="searchText"
-            @input="updateSearch"
-          />
-        </div>
-      </div>
+      <base-search-header
+        title="Products"
+        subtitle="Some products"
+        :search-text="searchText"
+        :update-search="updateSearch"
+      />
       <div class="mt-10 flex gap-8 flex-col">
         <div
           v-for="product in this.searchProduct"
@@ -28,6 +18,8 @@
             border border-gray-400
             rounded-lg
             shadow-lg
+            flex-col
+            lg:flex-row
           "
         >
           <div class="flex-1 h-72">

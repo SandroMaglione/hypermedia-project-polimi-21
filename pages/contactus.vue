@@ -79,7 +79,7 @@
         title="Company information"
         subtitle="Here you can find all the contact information about the company"
       />
-      <div class="grid grid-cols-3 gap-8 mt-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-6">
         <div class="flex flex-col space-y-1 border border-gray-100 shadow p-6">
           <span class="label">Email</span>
           <p class="font-light text-2xl">ouremail@company.info.com</p>

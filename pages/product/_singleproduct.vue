@@ -35,7 +35,7 @@
                 text-gray-800
                 shadow
               "
-              >More information</span
+              >More info</span
             >
           </div>
         </div>
@@ -72,15 +72,15 @@
           title="Product pricing"
           subtitle="Different prices available for the product"
         />
-        <div class="flex items-end gap-10 mt-12">
-          <div class="flex-1">
+        <div class="flex flex-col lg:flex-row items-end gap-10 mt-12">
+          <div class="flex-1 w-full lg:w-auto">
             <div class="h-60 bg-gray-300 text-center py-20">
               <span class="font-bold text-3xl text-gray-900 tracking-widest"
                 >Pricing 1</span
               >
             </div>
           </div>
-          <div class="flex-1">
+          <div class="flex-1 w-full lg:w-auto">
             <div
               class="
                 h-72
@@ -96,7 +96,7 @@
               >
             </div>
           </div>
-          <div class="flex-1">
+          <div class="flex-1 w-full lg:w-auto">
             <div class="h-60 bg-gray-300 text-center py-20">
               <span class="font-bold text-3xl text-gray-900 tracking-widest"
                 >Pricing 3</span

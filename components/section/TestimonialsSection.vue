@@ -2,7 +2,11 @@
   <div class="bg-white pt-16 pb-20 px-8 sm:px-12 lg:pt-24 lg:pb-28 lg:px-16">
     <section-title title="Testimonial" subtitle="Some test" />
     <div class="mt-10">
-      <div v-for="v in [1, 2, 3]" :key="v" class="flex">
+      <div
+        v-for="v in [1, 2, 3]"
+        :key="v"
+        class="flex flex-col lg:flex-row gap-8"
+      >
         <div class="flex-1 border border-gray-200 p-20">
           <span>Profile</span>
         </div>

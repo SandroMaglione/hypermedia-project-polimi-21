@@ -1,23 +1,13 @@
 <template>
   <div>
     <div class="bg-white pb-20 px-8 sm:px-12 lg:pt-10 lg:pb-28 lg:px-16">
-      <div class="flex items-center">
-        <div class="flex-1">
-          <base-section-title title="People" subtitle="Some people" />
-        </div>
-        <div class="flex-none">
-          <input
-            id="search"
-            type="text"
-            name="search"
-            placeholder="Search by name"
-            class="px-5 py-1.5 border border-gray-200 tracking-wide"
-            :value="searchText"
-            @input="updateSearch"
-          />
-        </div>
-      </div>
-      <div class="mt-10 grid grid-cols-3 gap-4">
+      <base-search-header
+        title="People"
+        subtitle="Some people"
+        :search-text="searchText"
+        :update-search="updateSearch"
+      />
+      <div class="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         <div
           v-for="member in this.searchMember"
           :key="member.id"

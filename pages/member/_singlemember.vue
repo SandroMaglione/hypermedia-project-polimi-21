@@ -7,20 +7,21 @@
         link2="Managers"
       />
       <div class="my-10">
-        <div class="flex">
+        <div class="flex flex-col lg:flex-row">
           <div
             :style="{ backgroundImage: `url(${singleMember.image_url})` }"
             class="
               bg-cover
+              w-full
               h-60
-              w-60
+              lg:w-60
               bg-gray-300
               border border-gray-400
               rounded-lg
               shadow-lg
             "
           ></div>
-          <div class="p-10">
+          <div class="pt-8 lg:p-10">
             <h2 class="font-bold text-5xl tracking-wider">
               {{ singleMember.name + ' ' + singleMember.surname }}
             </h2>

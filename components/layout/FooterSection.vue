@@ -6,7 +6,7 @@
         max-w-7xl
         mx-auto
         py-12
-        px-4
+        px-0
         sm:px-6
         md:flex
         md:items-center

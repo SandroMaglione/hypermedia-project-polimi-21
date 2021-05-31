@@ -1,5 +1,5 @@
 <template>
-  <div class="flex gap-10 items-center">
+  <div class="flex flex-col gap-6 lg:flex-row lg:gap-10 items-center">
     <div class="flex-1">
       <span class="font-bold tracking-widest text-xl font-gray-800">{{
         section

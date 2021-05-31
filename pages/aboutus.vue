@@ -26,6 +26,7 @@
       subtitle="Projects of the company"
       buttontext="View All"
       :posts="postsAreas"
+      :has-view-all="false"
     />
     <section-testimonials-section />
     <section-grid-section
@@ -33,6 +34,7 @@
       subtitle="Partners of the company"
       buttontext="View All"
       :posts="postsAreas"
+      :has-view-all="false"
     />
   </div>
 </template>

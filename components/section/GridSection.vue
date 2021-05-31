@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white pt-16 pb-20 px-8 sm:px-12 lg:pt-24 lg:pb-28 lg:px-16">
+  <div class="bg-white pt-16 pb-20 px-4 sm:px-12 lg:pt-24 lg:pb-28 lg:px-16">
     <div class="relative max-w-lg mx-auto lg:max-w-7xl">
       <section-title :title="title" :subtitle="subtitle" />
       <div
@@ -39,7 +39,7 @@
           </div>
         </div>
       </div>
-      <div class="flex items-center justify-center mt-12">
+      <div v-if="hasViewAll" class="flex items-center justify-center mt-12">
         <a
           :href="href"
           class="
@@ -98,6 +98,11 @@ export default Vue.extend({
       type: String,
       required: false,
       default: '#',
+    },
+    hasViewAll: {
+      type: Boolean,
+      required: false,
+      default: true,
     },
   },
   data() {
