@@ -1,13 +1,4 @@
 {
-  "Chat": {
-    "description": "Auto imported from components/Chat.vue"
-  },
-  "OrientationInfo": {
-    "description": "Auto imported from components/OrientationInfo.vue"
-  },
-  "SectionTitle": {
-    "description": "Auto imported from components/SectionTitle.vue"
-  },
   "LayoutFooterSection": {
     "description": "Auto imported from components/layout/FooterSection.vue"
   },
@@ -25,5 +16,14 @@
   },
   "SectionTestimonialsSection": {
     "description": "Auto imported from components/section/TestimonialsSection.vue"
+  },
+  "BaseChat": {
+    "description": "Auto imported from components/base/Chat.vue"
+  },
+  "BaseOrientationInfo": {
+    "description": "Auto imported from components/base/OrientationInfo.vue"
+  },
+  "BaseSectionTitle": {
+    "description": "Auto imported from components/base/SectionTitle.vue"
   }
 }
