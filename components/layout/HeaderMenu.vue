@@ -54,7 +54,7 @@ const navigation = [
   { name: 'People', href: '/people' },
   { name: 'Products', href: '/products' },
   { name: 'About us', href: '/aboutus' },
-  { name: 'Contact us', href: '#' },
+  { name: 'Contact us', href: '/contactus' },
 ]
 export default Vue.extend({
   data() {
