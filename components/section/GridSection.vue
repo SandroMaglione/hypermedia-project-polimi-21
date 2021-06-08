@@ -1,34 +1,20 @@
 <template>
-  <div class="bg-white pt-16 pb-20 px-4 sm:px-12 lg:pt-24 lg:pb-28 lg:px-16">
+  <div class="px-4 pt-16 pb-20 bg-white sm:px-12 lg:pt-24 lg:pb-28 lg:px-16">
     <div class="relative max-w-lg mx-auto lg:max-w-7xl">
-      <section-title :title="title" :subtitle="subtitle" />
+      <base-section-title :title="title" :subtitle="subtitle" />
       <div
-        class="
-          mt-6
-          grid
-          gap-16
-          pt-12
-          lg:grid-cols-3
-          lg:gap-x-5 lg:gap-y-12
-          border-t border-gray-200
-        "
+        class="grid gap-16 pt-12 mt-6 border-t border-gray-200  lg:grid-cols-3 lg:gap-x-5 lg:gap-y-12"
       >
+        <!-- Grid of elements to display -->
         <div v-for="post in posts" :key="post.id">
           <div class="flex-shrink-0">
             <img
-              class="
-                h-48
-                w-full
-                object-cover
-                shadow-xl
-                border border-gray-300
-                rounded
-              "
+              class="object-cover w-full h-48 border border-gray-300 rounded shadow-xl "
               :src="post.image_url"
               :alt="post.image_url"
             />
           </div>
-          <div class="flex-1 bg-white px-2 py-3 flex flex-col justify-between">
+          <div class="flex flex-col justify-between flex-1 px-2 py-3 bg-white">
             <div class="flex-1">
               <a :href="subhrefLink(post.id)" class="block">
                 <p class="text-xl font-semibold text-gray-900">
@@ -40,24 +26,10 @@
         </div>
       </div>
       <div v-if="hasViewAll" class="flex items-center justify-center mt-12">
+        <!-- Link to sub-page -->
         <a
           :href="href"
-          class="
-            inline-flex
-            items-center
-            px-4
-            py-2
-            border border-gray-300
-            shadow-sm
-            text-base
-            font-medium
-            rounded-md
-            text-gray-700
-            bg-white
-            hover:bg-gray-50
-            focus:outline-none
-            focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500
-          "
+          class="inline-flex items-center px-4 py-2 text-base font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm  hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
         >
           {{ buttontext }}
         </a>
@@ -68,10 +40,8 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import SectionTitle from '../base/SectionTitle.vue'
 
 export default Vue.extend({
-  components: { SectionTitle },
   props: {
     title: {
       type: String,
@@ -105,10 +75,8 @@ export default Vue.extend({
       default: true,
     },
   },
-  data() {
-    return {}
-  },
   methods: {
+    // Link to sub-page
     subhrefLink(id: string) {
       return this.subhref + '/' + id
     },

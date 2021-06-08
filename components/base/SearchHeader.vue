@@ -1,6 +1,7 @@
 <template>
-  <div class="flex flex-col lg:flex-row items-center space-y-6">
-    <div class="flex-1 text-left w-full">
+  <!-- Header with title, subtitle, and search input -->
+  <div class="flex flex-col items-center space-y-6 lg:flex-row">
+    <div class="flex-1 w-full text-left">
       <base-section-title :title="title" :subtitle="subtitle" />
     </div>
     <div class="flex-none w-full">

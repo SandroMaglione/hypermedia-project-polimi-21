@@ -1,31 +1,18 @@
 <template>
   <header class="bg-white">
-    <nav class="max-w-7xl mx-auto px-0 sm:px-6 lg:px-8" aria-label="Top">
+    <!-- Navigation menu -->
+    <nav class="px-0 mx-auto max-w-7xl sm:px-6 lg:px-8" aria-label="Top">
       <div
-        class="
-          w-full
-          py-6
-          flex
-          items-center
-          justify-between
-          border-b border-indigo-500
-          lg:border-none
-          hidden
-          lg:block
-        "
+        class="flex items-center justify-between hidden w-full py-6 border-b border-indigo-500  lg:border-none lg:block"
       >
         <div class="flex items-center">
           <div class="hidden ml-4 space-x-8 lg:block">
+            <!-- List of navigation links (landmarks) in desktop (hidden on mobile) -->
             <a
               v-for="link in navigation"
               :key="link.name"
               :href="link.href"
-              class="
-                text-base
-                font-medium
-                text-indigo-900
-                hover:text-indigo-700
-              "
+              class="text-base font-medium text-indigo-900  hover:text-indigo-700"
             >
               {{ link.name }}
             </a>
@@ -33,12 +20,14 @@
         </div>
       </div>
       <div class="px-4 py-6 lg:hidden">
-        <div class="flex justify-end w-full items-center">
+        <div class="flex items-center justify-end w-full">
           <div class="flex-1">
-            <span class="font-black text-indigo-900 tracking-tight text-xl"
+            <span class="text-xl font-black tracking-tight text-indigo-900"
               >Company</span
             >
           </div>
+
+          <!-- Open menu button -->
           <div class="flex-none">
             <button type="button" @click="openMenu">
               <svg
@@ -56,19 +45,11 @@
             </button>
           </div>
         </div>
+
+        <!-- Open menu on mobile (hidden in desktop) -->
         <div
           v-if="isOpen"
-          class="
-            py-4
-            flex flex-col
-            space-y-3
-            text-center text-lg
-            lg:text-base lg:text-left
-            lg:flex-wrap
-            justify-center
-            lg:space-x-6
-            lg:hidden
-          "
+          class="flex flex-col justify-center py-4 space-y-3 text-lg text-center  lg:text-base lg:text-left lg:flex-wrap lg:space-x-6 lg:hidden"
         >
           <a
             v-for="link in navigation"
@@ -87,6 +68,7 @@
 <script lang="ts">
 import Vue from 'vue'
 
+// List of navigation links
 const navigation = [
   { name: 'Home', href: '/' },
   { name: 'Areas', href: '/areas' },
@@ -95,6 +77,7 @@ const navigation = [
   { name: 'About us', href: '/aboutus' },
   { name: 'Contact us', href: '/contactus' },
 ]
+
 export default Vue.extend({
   data() {
     return {
@@ -103,6 +86,7 @@ export default Vue.extend({
     }
   },
   methods: {
+    // Toggle menu (open/close)
     openMenu() {
       this.isOpen = !this.isOpen
     },

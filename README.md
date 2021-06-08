@@ -22,11 +22,11 @@ UI design, Folder structure and project organization, Routes and Components styl
 
 ## Server and Database
 
-For the backend technology we decided to implement Supabase, an on Cloud solution very similar to Firebase.
+For the backend technology we decided to implement Supabase, a cloud solution very similar to Firebase, but with a SQL-based database.
 
-Server: Supabase https://supabase.io
+Server: [Supabase](https://supabase.io)
 
-Database: PostgreSQL https://supabase.io/database
+Database: [PostgreSQL](https://supabase.io/database)
 
 ## Components developed
 

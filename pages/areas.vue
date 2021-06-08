@@ -1,34 +1,26 @@
 <template>
   <div>
-    <div class="bg-white pb-20 px-8 sm:px-12 lg:pt-10 lg:pb-28 lg:px-16">
+    <div class="px-8 pb-20 bg-white sm:px-12 lg:pt-10 lg:pb-28 lg:px-16">
+      <!-- Title of the page -->
       <base-section-title title="Areas" subtitle="Some areas" />
-      <div class="mt-10 flex flex-col gap-8">
+
+      <!-- Display single areas -->
+      <div class="flex flex-col gap-8 mt-10">
         <div
           v-for="area in this.postsAreas"
           :key="area.id"
           :style="{ backgroundImage: `url(${area.image_url})` }"
-          class="
-            bg-cover
-            flex
-            items-center
-            justify-center
-            py-16
-            bg-gray-50
-            border border-gray-400
-            shadow-lg
-            rounded-lg
-            relative
-          "
+          class="relative flex items-center justify-center py-16 bg-cover border border-gray-400 rounded-lg shadow-lg  bg-gray-50"
         >
           <div
-            class="absolute inset-0 bg-indigo-900 opacity-75 rounded-lg"
+            class="absolute inset-0 bg-indigo-900 rounded-lg opacity-75"
           ></div>
           <div class="z-50 text-center">
-            <a :href="hrefLink(area.id)" class="hover:underline text-white">
-              <h2 class="font-bold text-6xl text-white tracking-wider">
+            <a :href="hrefLink(area.id)" class="text-white hover:underline">
+              <h2 class="text-6xl font-bold tracking-wider text-white">
                 {{ area.name }}
               </h2>
-              <p class="font-medium text-2xl text-white">
+              <p class="text-2xl font-medium text-white">
                 {{ area.description }}
               </p>
             </a>
@@ -42,6 +34,7 @@
 <script>
 export default {
   async asyncData({ $supabase }) {
+    // Retrieve list of all areas in the server (asyncData)
     const { data: areas } = await $supabase.from('area').select()
     return { postsAreas: areas }
   },
@@ -50,6 +43,7 @@ export default {
       postsAreas: [],
     }
   },
+  // SEO metadata
   head() {
     return {
       title: 'Areas',
@@ -63,6 +57,7 @@ export default {
     }
   },
   methods: {
+    // Link to page of single area (by its id)
     hrefLink(id) {
       return 'area/' + id
     },

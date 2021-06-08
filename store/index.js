@@ -7,6 +7,7 @@ export const state = () => {
 }
 
 export const mutations = {
+  // Add message to chatbot
   addMessage(state, message) {
     const messages = state.messages
     messages.push(message)

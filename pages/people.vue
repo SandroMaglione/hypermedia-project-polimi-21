@@ -1,37 +1,34 @@
 <template>
   <div>
-    <div class="bg-white pb-20 px-8 sm:px-12 lg:pt-10 lg:pb-28 lg:px-16">
+    <div class="px-8 pb-20 bg-white sm:px-12 lg:pt-10 lg:pb-28 lg:px-16">
+      <!-- Header with search input -->
       <base-search-header
         title="People"
         subtitle="Some people"
         :search-text="searchText"
         :update-search="updateSearch"
       />
-      <div class="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+
+      <!-- Display single member information -->
+      <div class="grid grid-cols-1 gap-4 mt-10 md:grid-cols-2 lg:grid-cols-3">
         <div
           v-for="member in this.searchMember"
           :key="member.id"
-          class="
-            flex flex-col
-            bg-indigo-900
-            border border-gray-300
-            rounded-lg
-            shadow-lg
-          "
+          class="flex flex-col bg-indigo-900 border border-gray-300 rounded-lg shadow-lg "
         >
           <a :href="hrefLink(member.id)">
-            <div class="w-full h-60 bg-gray-300">
+            <div class="w-full bg-gray-300 h-60">
               <img
-                class="h-60 w-full object-cover rounded-t-lg"
+                class="object-cover w-full rounded-t-lg h-60"
                 :src="member.image_url"
                 alt=""
               />
             </div>
             <div class="px-6 py-5">
-              <h2 class="font-bold text-xl text-white tracking-wider">
+              <h2 class="text-xl font-bold tracking-wider text-white">
                 {{ member.name + ' ' + member.surname }}
               </h2>
-              <p class="font-medium text-md text-white">{{ member.role }}</p>
+              <p class="font-medium text-white text-md">{{ member.role }}</p>
             </div>
           </a>
         </div>
@@ -43,6 +40,7 @@
 <script>
 export default {
   async asyncData({ $supabase }) {
+    // Retrieve list of all members in the server (asyncData)
     const { data: members } = await $supabase.from('member').select()
     return { postsMembers: members }
   },
@@ -52,6 +50,7 @@ export default {
       searchText: '',
     }
   },
+  // SEO metadata
   head() {
     return {
       title: 'People',
@@ -65,6 +64,7 @@ export default {
     }
   },
   computed: {
+    // Filter list of people based on search text
     searchMember() {
       return this.postsMembers.filter(
         (m) =>
@@ -75,9 +75,11 @@ export default {
     },
   },
   methods: {
+    // Set search text
     updateSearch(e) {
       this.searchText = e.target.value
     },
+    // Link to single member (by id)
     hrefLink(id) {
       return 'member/' + id
     },

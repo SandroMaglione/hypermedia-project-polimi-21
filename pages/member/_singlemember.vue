@@ -1,45 +1,46 @@
 <template>
   <div>
-    <div class="bg-white pb-20 px-8 sm:px-12 lg:pt-10 lg:pb-28 lg:px-16">
+    <div class="px-8 pb-20 bg-white sm:px-12 lg:pt-10 lg:pb-28 lg:px-16">
+      <!-- Navigation links -->
       <base-orientation-info
         section="Area / Domotics"
         link1="Areas"
         link2="Managers"
       />
+
+      <!-- Single member general information -->
       <div class="my-10">
         <div class="flex flex-col lg:flex-row">
           <div
             :style="{ backgroundImage: `url(${singleMember.image_url})` }"
-            class="
-              bg-cover
-              w-full
-              h-60
-              lg:w-60
-              bg-gray-300
-              border border-gray-400
-              rounded-lg
-              shadow-lg
-            "
+            class="w-full bg-gray-300 bg-cover border border-gray-400 rounded-lg shadow-lg  h-60 lg:w-60"
           ></div>
           <div class="pt-8 lg:p-10">
-            <h2 class="font-bold text-5xl tracking-wider">
+            <h2 class="text-5xl font-bold tracking-wider">
               {{ singleMember.name + ' ' + singleMember.surname }}
             </h2>
-            <p class="font-medium text-lg">{{ singleMember.role }}</p>
+            <p class="text-lg font-medium">{{ singleMember.role }}</p>
             <p class="font-light text-md">{{ singleMember.quote }}</p>
           </div>
         </div>
       </div>
+
+      <!-- Extra information -->
       <div class="flex flex-col gap-10">
+        <!-- Bio -->
         <div>
           <base-section-title title="Bio" :subtitle="singleMember.bio" />
         </div>
+
+        <!-- Education -->
         <div>
           <base-section-title
             title="Education"
             :subtitle="singleMember.education"
           />
         </div>
+
+        <!-- Work -->
         <div>
           <base-section-title title="Work" :subtitle="singleMember.work" />
         </div>
@@ -51,6 +52,7 @@
 <script>
 export default {
   async asyncData({ route, $supabase }) {
+    // Retrieve information about a single member by id
     const myMemberId = route.params.singlemember
     const { data: member } = await $supabase
       .from('member')
@@ -64,6 +66,7 @@ export default {
       singleMember: {},
     }
   },
+  // SEO metadata
   head() {
     return {
       title: 'Single member',

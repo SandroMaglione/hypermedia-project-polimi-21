@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!-- Company strengths 1 -->
     <section-feature-section
       title="This is out mission"
       desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, egestas
@@ -7,6 +8,7 @@
           et fermentum, augue. Aliquet amet volutpat quisque ut interdum
           tincidunt duis."
     />
+    <!-- Company strengths 2 -->
     <section-feature-section
       title="This is out vision"
       desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, egestas
@@ -14,6 +16,7 @@
           et fermentum, augue. Aliquet amet volutpat quisque ut interdum
           tincidunt duis."
     />
+    <!-- Company strengths 3 -->
     <section-feature-section
       title="We are project driven"
       desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, egestas
@@ -21,6 +24,7 @@
           et fermentum, augue. Aliquet amet volutpat quisque ut interdum
           tincidunt duis."
     />
+    <!-- Company's projects -->
     <section-grid-section
       title="Projects"
       subtitle="Projects of the company"
@@ -28,7 +32,9 @@
       :posts="postsAreas"
       :has-view-all="false"
     />
+    <!-- Company's testimonials -->
     <section-testimonials-section />
+    <!-- Company's partners -->
     <section-grid-section
       title="Partners"
       subtitle="Partners of the company"
@@ -149,6 +155,7 @@ export default Vue.extend({
       ],
     }
   },
+  // SEO metadata
   head() {
     return {
       title: 'About us',

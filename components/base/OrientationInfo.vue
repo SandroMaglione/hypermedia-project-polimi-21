@@ -1,35 +1,18 @@
 <template>
-  <div class="flex flex-col gap-6 lg:flex-row lg:gap-10 items-center">
+  <!-- Section name on the left and links on the right -->
+  <div class="flex flex-col items-center gap-6 lg:flex-row lg:gap-10">
     <div class="flex-1">
-      <span class="font-bold tracking-widest text-xl font-gray-800">{{
+      <span class="text-xl font-bold tracking-widest font-gray-800">{{
         section
       }}</span>
     </div>
     <div class="flex gap-8">
       <span
-        class="
-          font-bold
-          px-8
-          rounded-md
-          py-2
-          border border-gray-400
-          bg-indigo-700
-          text-white
-          shadow
-        "
+        class="px-8 py-2 font-bold text-white bg-indigo-700 border border-gray-400 rounded-md shadow "
         >{{ link1 }}</span
       >
       <span
-        class="
-          font-bold
-          px-8
-          rounded-md
-          py-2
-          border border-gray-400
-          bg-indigo-700
-          text-white
-          shadow
-        "
+        class="px-8 py-2 font-bold text-white bg-indigo-700 border border-gray-400 rounded-md shadow "
         >{{ link2 }}</span
       >
     </div>

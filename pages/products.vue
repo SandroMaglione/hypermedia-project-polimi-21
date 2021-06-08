@@ -1,38 +1,32 @@
 <template>
   <div>
-    <div class="bg-white pb-20 px-8 sm:px-12 lg:pt-10 lg:pb-28 lg:px-16">
+    <div class="px-8 pb-20 bg-white sm:px-12 lg:pt-10 lg:pb-28 lg:px-16">
+      <!-- Header with search input -->
       <base-search-header
         title="Products"
         subtitle="Some products"
         :search-text="searchText"
         :update-search="updateSearch"
       />
-      <div class="mt-10 flex gap-8 flex-col">
+
+      <!-- Display information about each product -->
+      <div class="flex flex-col gap-8 mt-10">
         <div
           v-for="product in this.searchProduct"
           :key="product.id"
-          class="
-            flex
-            justify-center
-            bg-indigo-900
-            border border-gray-400
-            rounded-lg
-            shadow-lg
-            flex-col
-            lg:flex-row
-          "
+          class="flex flex-col justify-center bg-indigo-900 border border-gray-400 rounded-lg shadow-lg  lg:flex-row"
         >
           <div class="flex-1 h-72">
             <img
-              class="h-72 w-full object-cover"
+              class="object-cover w-full h-72"
               :src="product.image_url"
               :alt="product.image_url"
             />
           </div>
           <div class="flex-1 p-10">
             <a :href="hrefLink(product.id)">
-              <h2 class="font-black text-5xl text-white">{{ product.name }}</h2>
-              <p class="font-medium text-2xl text-white">
+              <h2 class="text-5xl font-black text-white">{{ product.name }}</h2>
+              <p class="text-2xl font-medium text-white">
                 {{ product.description }}
               </p>
             </a>
@@ -46,6 +40,7 @@
 <script>
 export default {
   async asyncData({ $supabase }) {
+    // Retrieve list of all products in the server (asyncData)
     const { data: products } = await $supabase.from('product').select()
     return { postsProducts: products }
   },
@@ -55,6 +50,7 @@ export default {
       searchText: '',
     }
   },
+  // SEO metadata
   head() {
     return {
       title: 'Products',
@@ -68,6 +64,7 @@ export default {
     }
   },
   computed: {
+    // Filter products by search text
     searchProduct() {
       return this.postsProducts.filter(
         (m) =>
@@ -77,9 +74,11 @@ export default {
     },
   },
   methods: {
+    // Update search text
     updateSearch(e) {
       this.searchText = e.target.value
     },
+    // Link to single product page (by id)
     hrefLink(id) {
       return 'product/' + id
     },
