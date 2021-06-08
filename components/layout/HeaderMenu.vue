@@ -29,7 +29,7 @@
         <div class="flex items-center justify-end w-full">
           <div class="flex-1">
             <span class="text-xl font-black tracking-tight text-indigo-900"
-              >Company</span
+              >Rocket Inc.</span
             >
           </div>
 

@@ -47,7 +47,6 @@ Database: [PostgreSQL](https://supabase.io/database)
 
 - `base/OrientationInfo.vue`: Components used to display information about the current and previous pages.
 - `base/SectionTitle.vue`: Shared style and layout for the title of each section of the website.
-- `base/SearchHeader.vue`: Shared style and layout for section title and search by name input.
 - `base/Chat.vue`: Contains the code to display and use the chatbot in the website. It is included in all pages inside `default.vue` layout.
 
 ## Plugins

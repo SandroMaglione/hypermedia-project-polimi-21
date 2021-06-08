@@ -5,9 +5,11 @@
     <div class="px-8 pb-20 bg-white sm:px-12 lg:pt-10 lg:pb-28 lg:px-16">
       <!-- Navigation links -->
       <base-orientation-info
-        section="Area / Domotics"
-        link1="Areas"
-        link2="Managers"
+        :section="orientationLabel"
+        :link1="myAreaLink"
+        :link2="myProductLink"
+        :href1="myAreaHref"
+        :href2="myProductHref"
       />
 
       <!-- Single member general information -->
@@ -57,15 +59,23 @@ export default {
     // Retrieve information about a single member by id
     const myMemberId = route.params.singlemember
     const { data: member } = await $supabase
-      .from('member')
+      .from('people')
       .select()
       .eq('id', myMemberId)
       .single()
-    return { singleMember: member }
+
+    // Retrieve information of the area and product
+    const { data: peopleData } = await $supabase
+      .from('people_data')
+      .select()
+      .eq('people_id', myMemberId)
+      .single()
+    return { singleMember: member, linkData: peopleData }
   },
   data() {
     return {
       singleMember: {},
+      linkData: {},
     }
   },
   // SEO metadata
@@ -83,20 +93,37 @@ export default {
   },
   // SEO metadata computed from member information
   computed: {
+    orientationLabel() {
+      return (
+        'Member / ' + this.singleMember.name + ' ' + this.singleMember.surname
+      )
+    },
+    myAreaLink() {
+      return 'View my working area: ' + this.linkData.area_name
+    },
+    myProductLink() {
+      return "View product I'm working on: " + this.linkData.product_name
+    },
+    myAreaHref() {
+      return '/area/' + this.linkData.area_id
+    },
+    myProductHref() {
+      return '/product/' + this.linkData.product_id
+    },
     headTitle() {
-      return this.singleMember.name + ' - The Company'
+      return this.singleMember.name + ' - Rocket Inc.'
     },
     headHid() {
       return 'member ' + this.singleMember.name
     },
     headName() {
-      return 'The Company ' + this.singleMember.name
+      return 'Rocket Inc. ' + this.singleMember.name
     },
     headContent() {
       return (
         'View all the details about ' +
         this.singleMember.name +
-        ' working at The Company'
+        ' working at Rocket Inc.'
       )
     },
   },

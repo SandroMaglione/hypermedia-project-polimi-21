@@ -7,13 +7,45 @@
       }}</span>
     </div>
     <div class="flex gap-8">
-      <span
-        class="px-8 py-2 font-bold text-white bg-indigo-700 border border-gray-400 rounded-md shadow "
-        >{{ link1 }}</span
+      <a
+        v-if="href1 != null"
+        :href="href1"
+        class="
+          px-6
+          py-1.5
+          font-bold
+          text-sm text-indigo-600
+          bg-white
+          border border-indigo-400
+          rounded-md
+          shadow
+          hover:bg-indigo-600
+          hover:text-white
+          transition-all
+          duration-150
+          ease-in-out
+        "
+        >{{ link1 }}</a
       >
-      <span
-        class="px-8 py-2 font-bold text-white bg-indigo-700 border border-gray-400 rounded-md shadow "
-        >{{ link2 }}</span
+      <a
+        v-if="href2 != null"
+        :href="href2"
+        class="
+          px-6
+          py-1.5
+          font-bold
+          text-sm text-indigo-600
+          bg-white
+          border border-indigo-400
+          rounded-md
+          shadow
+          hover:bg-indigo-600
+          hover:text-white
+          transition-all
+          duration-150
+          ease-in-out
+        "
+        >{{ link2 }}</a
       >
     </div>
   </div>
@@ -35,6 +67,16 @@ export default Vue.extend({
     link2: {
       type: String,
       required: true,
+    },
+    href1: {
+      type: String,
+      required: false,
+      default: null,
+    },
+    href2: {
+      type: String,
+      required: false,
+      default: null,
     },
   },
 })

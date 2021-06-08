@@ -3,13 +3,8 @@
     <layout-header-menu current="People" />
 
     <div class="px-8 pb-20 bg-white sm:px-12 lg:pt-10 lg:pb-28 lg:px-16">
-      <!-- Header with search input -->
-      <base-search-header
-        title="People"
-        subtitle="Some people"
-        :search-text="searchText"
-        :update-search="updateSearch"
-      />
+      <!-- Header title -->
+      <base-section-title title="People" subtitle="Some people" />
 
       <!-- Display single member information -->
       <div class="grid grid-cols-1 gap-4 mt-10 md:grid-cols-2 lg:grid-cols-3">
@@ -43,24 +38,24 @@
 export default {
   async asyncData({ $supabase }) {
     // Retrieve list of all members in the server (asyncData)
-    const { data: members } = await $supabase.from('member').select()
-    return { postsMembers: members }
+    const { data: people } = await $supabase.from('people').select()
+    return { postsPeople: people }
   },
   data() {
     return {
-      postsMembers: [],
+      postsPeople: [],
       searchText: '',
     }
   },
   // SEO metadata
   head() {
     return {
-      title: 'People - The Company',
+      title: 'People - Rocket Inc.',
       meta: [
         {
           hid: 'people',
-          content: 'View and search all the people that work in The Company',
-          name: 'The Company people',
+          content: 'View and search all the people that work in Rocket Inc.',
+          name: 'Rocket Inc. people',
         },
       ],
     }
@@ -68,7 +63,7 @@ export default {
   computed: {
     // Filter list of people based on search text
     searchMember() {
-      return this.postsMembers.filter(
+      return this.postsPeople.filter(
         (m) =>
           this.searchText === '' ||
           m.name.toLowerCase().includes(this.searchText.toLowerCase()) ||

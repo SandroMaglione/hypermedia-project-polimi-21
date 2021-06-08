@@ -11,13 +11,13 @@
           <p
             class="text-base text-center text-indigo-400 underline  hover:text-indigo-700"
           >
-            <a href="#"> Privacy Policy </a>
+            <a href="/privacy"> Privacy Policy </a>
           </p>
         </div>
         <div>
           <p class="text-base text-center text-gray-400">
-            &copy; 2020 The Company<br />
-            Inc. All rights reserved.
+            &copy; 2020 Rocket Inc.<br />
+            All rights reserved.
           </p>
         </div>
         <section-social-nav />

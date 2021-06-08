@@ -48,12 +48,12 @@ export default {
   // SEO metadata
   head() {
     return {
-      title: 'Areas - The Company',
+      title: 'Areas - Rocket Inc.',
       meta: [
         {
           hid: 'areas',
-          content: 'View all the areas in which The Company is specialized',
-          name: 'The Company areas',
+          content: 'View all the areas in which Rocket Inc. is specialized',
+          name: 'Rocket Inc. areas',
         },
       ],
     }

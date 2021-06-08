@@ -6,30 +6,36 @@
     <section-hero-section />
     <!-- List of areas -->
     <section-grid-section
-      title="Areas"
-      subtitle="Main areas of the company"
-      buttontext="Learn more"
-      href="/areas"
+      title="Main areas"
+      subtitle="List of all the main areas we are working on"
       subhref="/area"
       :posts="postsAreas"
+      :link="{
+        href: '/areas',
+        label: 'View all the areas',
+      }"
     />
     <!-- List of people -->
     <section-grid-section
-      title="Team"
-      subtitle="Team of the company"
-      buttontext="Learn more"
-      href="/people"
+      title="Top People"
+      subtitle="List of the main figures working in our company"
       subhref="/member"
-      :posts="postsTeams"
+      :posts="postsPeople"
+      :link="{
+        href: '/people',
+        label: 'View all the people',
+      }"
     />
     <!-- List of products -->
     <section-grid-section
-      title="Products"
-      subtitle="Products of the company"
-      buttontext="Learn more"
-      href="/products"
+      title="Top Products"
+      subtitle="Main products the company is working on"
       subhref="/product"
       :posts="postsProducts"
+      :link="{
+        href: '/products',
+        label: 'View all the products',
+      }"
     />
   </div>
 </template>
@@ -39,31 +45,31 @@ export default {
   async asyncData({ $supabase }) {
     // Retrieve all `area`, `team`, and `product` from database in the server (asyncData)
     const { data: areas } = await $supabase.from('area').select()
-    const { data: teams } = await $supabase.from('team').select()
+    const { data: people } = await $supabase.from('people').select()
     const { data: products } = await $supabase.from('product').select()
     return {
       postsAreas: areas,
-      postsTeams: teams,
+      postsPeople: people,
       postsProducts: products,
     }
   },
   data() {
     return {
       postsAreas: [],
-      postsTeams: [],
+      postsPeople: [],
       postsProducts: [],
     }
   },
   // SEO metadata
   head() {
     return {
-      title: 'The Company - Solutions to your everyday problems',
+      title: 'Rocket Inc. - Solutions to your everyday problems',
       meta: [
         {
           hid: 'index',
           content:
-            'We at The Company provide solutions for every type of digital business to help you in your journey',
-          name: 'The Company website',
+            'We at Rocket Inc. provide solutions for every type of digital business to help you in your journey',
+          name: 'Rocket Inc. website',
         },
       ],
     }

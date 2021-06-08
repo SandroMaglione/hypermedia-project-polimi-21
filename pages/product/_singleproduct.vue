@@ -5,27 +5,14 @@
     <div class="px-8 pb-20 bg-white sm:px-12 lg:pt-10 lg:pb-28 lg:px-16">
       <!-- Navigation links -->
       <base-orientation-info
-        section="Area / Domotics"
-        link1="Areas"
+        :section="orientationLabel"
+        :link1="myAreaLink"
+        :href1="myAreaHref"
         link2="Managers"
       />
 
       <!-- Single product general information -->
       <div class="pt-10 mt-6 mb-10 border-t border-gray-300">
-        <div class="flex items-center mb-6">
-          <div class="flex-1">
-            <span
-              class="px-8 py-2 font-bold text-gray-800 border border-gray-400 rounded-md shadow  bg-gray-50"
-              >Features</span
-            >
-          </div>
-          <div class="flex-1 text-right">
-            <span
-              class="px-8 py-2 font-bold text-gray-800 border border-gray-400 rounded-md shadow  bg-gray-50"
-              >More info</span
-            >
-          </div>
-        </div>
         <div
           :style="{ backgroundImage: `url(${singleProduct.image_url})` }"
           class="relative flex items-center justify-center bg-gray-300 border border-gray-400 rounded-lg shadow-xl  h-60"
@@ -80,6 +67,14 @@
           </div>
         </div>
       </div>
+
+      <!-- List of people -->
+      <section-grid-section
+        title="People working on this Product"
+        subtitle="All the people working on the product"
+        subhref="/product"
+        :posts="productPeople"
+      />
     </div>
   </div>
 </template>
@@ -94,11 +89,26 @@ export default {
       .select()
       .eq('id', myProductId)
       .single()
-    return { singleProduct: product }
+
+    // Retrive list of people working on the product
+    const { data: people } = await $supabase
+      .from('product_people')
+      .select()
+      .eq('product_id', myProductId)
+
+    // Retrive area of the product
+    const { data: area } = await $supabase
+      .from('product_area')
+      .select()
+      .eq('product_id', myProductId)
+      .single()
+    return { singleProduct: product, productPeople: people, productArea: area }
   },
   data() {
     return {
       singleProduct: {},
+      productArea: {},
+      productPeople: [],
     }
   },
   // SEO metadata
@@ -116,20 +126,29 @@ export default {
   },
   // SEO metadata computed from product information
   computed: {
+    orientationLabel() {
+      return 'Product / ' + this.singleProduct.name
+    },
+    myAreaLink() {
+      return 'View area of the product: ' + this.productArea.name
+    },
+    myAreaHref() {
+      return '/area/' + this.productArea.id
+    },
     headTitle() {
-      return this.singleProduct.name + ' - The Company'
+      return this.singleProduct.name + ' - Rocket Inc.'
     },
     headHid() {
       return 'product ' + this.singleProduct.name
     },
     headName() {
-      return 'The Company ' + this.singleProduct.name
+      return 'Rocket Inc. ' + this.singleProduct.name
     },
     headContent() {
       return (
         'View all the details about the ' +
         this.singleProduct.name +
-        ' product offered by The Company'
+        ' product offered by Rocket Inc.'
       )
     },
   },

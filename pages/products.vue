@@ -3,13 +3,8 @@
     <layout-header-menu current="Products" />
 
     <div class="px-8 pb-20 bg-white sm:px-12 lg:pt-10 lg:pb-28 lg:px-16">
-      <!-- Header with search input -->
-      <base-search-header
-        title="Products"
-        subtitle="Some products"
-        :search-text="searchText"
-        :update-search="updateSearch"
-      />
+      <!-- Header title -->
+      <base-section-title title="Products" subtitle="Some products" />
 
       <!-- Display information about each product -->
       <div class="flex flex-col gap-8 mt-10">
@@ -55,13 +50,13 @@ export default {
   // SEO metadata
   head() {
     return {
-      title: 'Products - The Company',
+      title: 'Products - Rocket Inc.',
       meta: [
         {
           hid: 'products',
           content:
             'View all the products that we offer for you and your business',
-          name: 'The Company products',
+          name: 'Rocket Inc. products',
         },
       ],
     }

@@ -5,27 +5,13 @@
     <div class="px-8 pb-20 bg-white sm:px-12 lg:pt-10 lg:pb-28 lg:px-16">
       <!-- Navigation links -->
       <base-orientation-info
-        section="Area / Domotics"
+        :section="orientationLabel"
         link1="Areas"
         link2="Managers"
       />
 
       <!-- Single area general information -->
       <div class="pt-10 mt-6 mb-10 border-t border-gray-300">
-        <div class="flex items-center mb-8">
-          <div class="flex-1">
-            <span
-              class="px-8 py-2 font-bold text-gray-800 border border-gray-400 rounded-md shadow  bg-gray-50"
-              >Researches</span
-            >
-          </div>
-          <div class="flex-1 text-right">
-            <span
-              class="px-8 py-2 font-bold text-gray-800 border border-gray-400 rounded-md shadow  bg-gray-50"
-              >Contacts</span
-            >
-          </div>
-        </div>
         <div
           :style="{ backgroundImage: `url(${singleArea.image_url})` }"
           class="relative flex items-center justify-center mt-4 bg-gray-300 bg-cover border border-gray-400 rounded-lg shadow-xl  h-72"
@@ -50,6 +36,22 @@
         title="More information"
         :desc="singleArea.more_info"
       />
+
+      <!-- List of products -->
+      <section-grid-section
+        title="Products of this Area"
+        subtitle="All the products of the area"
+        subhref="/product"
+        :posts="areaProducts"
+      />
+
+      <!-- List of people -->
+      <section-grid-section
+        title="People working in this Area"
+        subtitle="All the people working in the area"
+        subhref="/member"
+        :posts="areaPeople"
+      />
     </div>
   </div>
 </template>
@@ -64,11 +66,25 @@ export default {
       .select()
       .eq('id', myAreaId)
       .single()
-    return { singleArea: area }
+
+    // Retrieve list of people in this area
+    const { data: people } = await $supabase
+      .from('area_people')
+      .select()
+      .eq('area_id', myAreaId)
+
+    // Retrieve list of products in this area
+    const { data: products } = await $supabase
+      .from('area_product')
+      .select()
+      .eq('area_id', myAreaId)
+    return { singleArea: area, areaPeople: people, areaProducts: products }
   },
   data() {
     return {
       singleArea: {},
+      areaPeople: [],
+      areaProducts: [],
     }
   },
   // SEO metadata
@@ -86,20 +102,23 @@ export default {
   },
   // SEO metadata computed from area information
   computed: {
+    orientationLabel() {
+      return 'Area / ' + this.singleArea.name
+    },
     headTitle() {
-      return this.singleArea.name + ' - The Company'
+      return this.singleArea.name + ' - Rocket Inc.'
     },
     headHid() {
       return 'area ' + this.singleArea.name
     },
     headName() {
-      return 'The Company ' + this.singleArea.name
+      return 'Rocket Inc. ' + this.singleArea.name
     },
     headContent() {
       return (
         'View all the details about ' +
         this.singleArea.name +
-        ', area in which The Company is actively working'
+        ', area in which Rocket Inc. is actively working'
       )
     },
   },

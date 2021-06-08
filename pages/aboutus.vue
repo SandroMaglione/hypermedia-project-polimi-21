@@ -160,13 +160,13 @@ export default Vue.extend({
   // SEO metadata
   head() {
     return {
-      title: 'About us - The Company',
+      title: 'About us - Rocket Inc.',
       meta: [
         {
           hid: 'aboutus',
           content:
-            'Learn more about The Company, who we are, what we do, why choosing us',
-          name: 'The Company about us',
+            'Learn more about Rocket Inc., who we are, what we do, why choosing us',
+          name: 'Rocket Inc. about us',
         },
       ],
     }
