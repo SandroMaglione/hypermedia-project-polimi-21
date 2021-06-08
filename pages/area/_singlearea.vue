@@ -72,15 +72,34 @@ export default {
   // SEO metadata
   head() {
     return {
-      title: 'Single area',
+      title: this.headTitle,
       meta: [
         {
-          hid: 'description',
-          name: 'description',
-          content: 'My custom description',
+          hid: this.headHid,
+          name: this.headName,
+          content: this.headContent,
         },
       ],
     }
+  },
+  // SEO metadata computed from area information
+  computed: {
+    headTitle() {
+      return this.singleArea.name + ' - The Company'
+    },
+    headHid() {
+      return 'area ' + this.singleArea.name
+    },
+    headName() {
+      return 'The Company ' + this.singleArea.name
+    },
+    headContent() {
+      return (
+        'View all the details about ' +
+        this.singleArea.name +
+        ', area in which The Company is actively working'
+      )
+    },
   },
 }
 </script>

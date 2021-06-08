@@ -158,12 +158,13 @@ export default Vue.extend({
   // SEO metadata
   head() {
     return {
-      title: 'About us',
+      title: 'About us - The Company',
       meta: [
         {
-          hid: 'description',
-          name: 'description',
-          content: 'My custom description',
+          hid: 'aboutus',
+          content:
+            'Learn more about The Company, who we are, what we do, why choosing us',
+          name: 'The Company about us',
         },
       ],
     }

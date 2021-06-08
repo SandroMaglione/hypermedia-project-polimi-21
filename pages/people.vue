@@ -53,12 +53,12 @@ export default {
   // SEO metadata
   head() {
     return {
-      title: 'People',
+      title: 'People - The Company',
       meta: [
         {
-          hid: 'description',
-          name: 'description',
-          content: 'My custom description',
+          hid: 'people',
+          content: 'View and search all the people that work in The Company',
+          name: 'The Company people',
         },
       ],
     }

@@ -46,12 +46,12 @@ export default {
   // SEO metadata
   head() {
     return {
-      title: 'Areas',
+      title: 'Areas - The Company',
       meta: [
         {
-          hid: 'description',
-          name: 'description',
-          content: 'My custom description',
+          hid: 'areas',
+          content: 'View all the areas in which The Company is specialized',
+          name: 'The Company areas',
         },
       ],
     }

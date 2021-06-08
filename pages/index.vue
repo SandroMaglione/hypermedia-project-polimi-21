@@ -55,12 +55,13 @@ export default {
   // SEO metadata
   head() {
     return {
-      title: 'Welcome to our website',
+      title: 'The Company - Solutions to your everyday problems',
       meta: [
         {
-          hid: 'description',
-          name: 'description',
-          content: 'My custom description',
+          hid: 'index',
+          content:
+            'We at The Company provide solutions for every type of digital business to help you in your journey',
+          name: 'The Company website',
         },
       ],
     }

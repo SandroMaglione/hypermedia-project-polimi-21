@@ -53,12 +53,13 @@ export default {
   // SEO metadata
   head() {
     return {
-      title: 'Products',
+      title: 'Products - The Company',
       meta: [
         {
-          hid: 'description',
-          name: 'description',
-          content: 'My custom description',
+          hid: 'products',
+          content:
+            'View all the products that we offer for you and your business',
+          name: 'The Company products',
         },
       ],
     }

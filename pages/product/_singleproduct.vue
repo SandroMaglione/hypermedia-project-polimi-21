@@ -102,15 +102,34 @@ export default {
   // SEO metadata
   head() {
     return {
-      title: 'Single product',
+      title: this.headTitle,
       meta: [
         {
-          hid: 'description',
-          name: 'description',
-          content: 'My custom description',
+          hid: this.headHid,
+          name: this.headName,
+          content: this.headContent,
         },
       ],
     }
+  },
+  // SEO metadata computed from product information
+  computed: {
+    headTitle() {
+      return this.singleProduct.name + ' - The Company'
+    },
+    headHid() {
+      return 'product ' + this.singleProduct.name
+    },
+    headName() {
+      return 'The Company ' + this.singleProduct.name
+    },
+    headContent() {
+      return (
+        'View all the details about the ' +
+        this.singleProduct.name +
+        ' product offered by The Company'
+      )
+    },
   },
 }
 </script>

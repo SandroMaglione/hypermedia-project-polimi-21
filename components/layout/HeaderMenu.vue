@@ -19,6 +19,8 @@
           </div>
         </div>
       </div>
+
+      <!-- Menu navigation menu -->
       <div class="px-4 py-6 lg:hidden">
         <div class="flex items-center justify-end w-full">
           <div class="flex-1">

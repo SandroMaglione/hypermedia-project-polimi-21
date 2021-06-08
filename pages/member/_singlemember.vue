@@ -69,15 +69,34 @@ export default {
   // SEO metadata
   head() {
     return {
-      title: 'Single member',
+      title: this.headTitle,
       meta: [
         {
-          hid: 'description',
-          name: 'description',
-          content: 'My custom description',
+          hid: this.headHid,
+          name: this.headName,
+          content: this.headContent,
         },
       ],
     }
+  },
+  // SEO metadata computed from member information
+  computed: {
+    headTitle() {
+      return this.singleMember.name + ' - The Company'
+    },
+    headHid() {
+      return 'member ' + this.singleMember.name
+    },
+    headName() {
+      return 'The Company ' + this.singleMember.name
+    },
+    headContent() {
+      return (
+        'View all the details about ' +
+        this.singleMember.name +
+        ' working at The Company'
+      )
+    },
   },
 }
 </script>
