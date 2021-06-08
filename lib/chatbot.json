@@ -1,0 +1,87 @@
+{
+  "name": "chatbot",
+  "data": {
+    "kb": {
+      "continue_v": ["guide", "contact"],
+      "steps_v": ["", "/contactus"],
+      "stay_message": "I do not understand, can you repeat?",
+      "question": {
+        "unkown": "I cannot understand, could you repeat?",
+        "initials": ["Why, contact us?", "Would you want to contact us?"],
+        "choices": [
+          {
+            "id": "contactor",
+            "intents": ["contact"],
+            "utterance": ["Coming then!"],
+            "payload": null
+          },
+          {
+            "id": "introduce",
+            "intents": ["guide"],
+            "utterance": ["This is what we are"],
+            "payload": null
+          }
+        ]
+      },
+      "introduce": "Okay, I am the chatbot, I will show you around",
+      "home": "Lets look at our homepage",
+      "about": "Lets look at our about page",
+      "contactor": "Do you want to view the form or just the page?",
+      "contactpage": "This is the contact page"
+    },
+    "process": {
+      "first_activity_id": "start",
+      "activities": [
+        {
+          "my_id": "start",
+          "my_type": "START",
+          "next_id": "question",
+          "callback": "start"
+        },
+        {
+          "my_id": "question",
+          "my_type": "XOR",
+          "next_id": "end",
+          "callback": "generic_xor",
+          "choices": ["contactor", "introduce"]
+        },
+        {
+          "my_id": "introduce",
+          "my_type": "TASK",
+          "next_id": "home",
+          "callback": "guide"
+        },
+        {
+          "my_id": "home",
+          "my_type": "TASK",
+          "next_id": "about",
+          "callback": "guide"
+        },
+        {
+          "my_id": "about",
+          "my_type": "TASK",
+          "next_id": null,
+          "callback": "nothing"
+        },
+        {
+          "my_id": "contactor",
+          "my_type": "TASK",
+          "next_id": "contactpage",
+          "callback": "guide"
+        },
+        {
+          "my_id": "contactpage",
+          "my_type": "TASK",
+          "next_id": null,
+          "callback": "nothing"
+        },
+        {
+          "my_id": "end",
+          "my_type": "END",
+          "next_id": null,
+          "callback": "nothing"
+        }
+      ]
+    }
+  }
+}

@@ -1,5 +1,119 @@
 import { Chatbot } from 'chatbot-types'
 
+export const config: Chatbot = {
+  name: 'chatbot',
+  data: {
+    kb: {
+      continue_v: ['move', 'next'],
+      steps_v: ['', '/contactus'],
+      stay_message: 'I do not understand, can you repeat?',
+      init: 'Welcome to our website, we are glad to have you here',
+      question: {
+        unkown: 'I cannot understand, could you repeat?',
+        initials: ['Why, contact us?', 'Would you want to contact us?'],
+        choices: [
+          {
+            id: 'contactor',
+            intents: ['contact'],
+            utterance: ['Coming then!'],
+            payload: null,
+          },
+          {
+            id: 'introduce',
+            intents: ['guide'],
+            utterance: ['This is what we are'],
+            payload: null,
+          },
+        ],
+      },
+      introduce: 'This is how we are',
+      home: 'Lets look at our homepage',
+      about: 'Lets look at our about page',
+      contactor: {
+        unkown: 'I cannot understand, could you repeat?',
+        initials: ['Form or just page?', 'You know, we do have a form...'],
+        choices: [
+          {
+            id: 'contactform',
+            intents: ['form'],
+            utterance: ['Form!'],
+            payload: null,
+          },
+          {
+            id: 'contactpage',
+            intents: ['page'],
+            utterance: ['No form then...'],
+            payload: null,
+          },
+        ],
+      },
+      contactform: 'The form is here!',
+      contactpage: 'This is the contact page',
+    },
+    process: {
+      first_activity_id: 'start',
+      activities: [
+        {
+          my_id: 'start',
+          my_type: 'START',
+          next_id: 'question',
+          callback: 'start',
+        },
+        {
+          my_id: 'question',
+          my_type: 'XOR',
+          next_id: 'end',
+          callback: 'generic_xor',
+          choices: ['contactor', 'introduce'],
+        },
+        {
+          my_id: 'introduce',
+          my_type: 'TASK',
+          next_id: 'home',
+          callback: 'guide',
+        },
+        {
+          my_id: 'home',
+          my_type: 'TASK',
+          next_id: 'about',
+          callback: 'guide',
+        },
+        {
+          my_id: 'about',
+          my_type: 'TASK',
+          next_id: null,
+          callback: 'nothing',
+        },
+        {
+          my_id: 'contactor',
+          my_type: 'XOR',
+          next_id: null,
+          callback: 'generic_xor',
+          choices: ['contactform', 'contactpage'],
+        },
+        {
+          my_id: 'contactform',
+          my_type: 'TASK',
+          next_id: null,
+          callback: 'nothing',
+        },
+        {
+          my_id: 'contactpage',
+          my_type: 'TASK',
+          next_id: null,
+          callback: 'nothing',
+        },
+        {
+          my_id: 'end',
+          my_type: 'END',
+          next_id: null,
+          callback: 'nothing',
+        },
+      ],
+    },
+  },
+}
+
 export const chatbot: Chatbot = {
   name: 'navigation-chatbot',
   data: {
@@ -63,7 +177,7 @@ export const chatbot: Chatbot = {
       people: 'This are all the people of the company!',
     },
     process: {
-      firstActivityId: 'start',
+      first_activity_id: 'start',
       activities: [
         {
           my_id: 'start',

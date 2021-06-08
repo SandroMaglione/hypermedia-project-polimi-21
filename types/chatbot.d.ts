@@ -24,7 +24,7 @@ declare module 'chatbot-types' {
   }
 
   interface ProcessBase {
-    firstActivityId: string
+    first_activity_id: string
     activities: ChatbotActivity[]
   }
 
