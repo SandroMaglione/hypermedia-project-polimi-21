@@ -3,9 +3,9 @@
     <!-- Navigation menu -->
     <nav class="px-0 mx-auto max-w-7xl sm:px-6 lg:px-8" aria-label="Top">
       <div
-        class="flex items-center justify-between hidden w-full py-6 border-b border-indigo-500  lg:border-none lg:block"
+        class="flex items-center justify-between hidden w-full py-6 border-b border-indigo-500  lg:items-center lg:border-none lg:flex"
       >
-        <div class="flex items-center">
+        <div class="flex items-center flex-1">
           <div class="hidden ml-4 space-x-8 lg:block">
             <!-- List of navigation links (landmarks) in desktop (hidden on mobile) -->
             <a
@@ -17,6 +17,9 @@
               {{ link.name }}
             </a>
           </div>
+        </div>
+        <div class="flex-none">
+          <section-social-nav />
         </div>
       </div>
 

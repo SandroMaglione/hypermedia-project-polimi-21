@@ -4,20 +4,21 @@
       class="px-0 py-12 mx-auto  max-w-7xl sm:px-6 md:flex md:items-center md:justify-between lg:px-8"
     >
       <!-- Footer information -->
-      <div class="flex justify-center space-x-6 md:order-2">
-        <a
-          v-for="item in navigation"
-          :key="item.name"
-          :href="item.href"
-          class="text-gray-400 hover:text-gray-500"
-        >
-          <span class="sr-only">{{ item.name }}</span>
-        </a>
-      </div>
-      <div class="mt-8 md:mt-0 md:order-1">
-        <p class="text-base text-center text-gray-400">
-          &copy; 2020 The Company, Inc. All rights reserved.
-        </p>
+      <div class="flex items-center justify-between w-full mt-8 mr-20">
+        <div>
+          <p
+            class="text-base text-center text-indigo-400 underline  hover:text-indigo-700"
+          >
+            <a href="#"> Privacy Policy </a>
+          </p>
+        </div>
+        <div>
+          <p class="text-base text-center text-gray-400">
+            &copy; 2020 The Company<br />
+            Inc. All rights reserved.
+          </p>
+        </div>
+        <section-social-nav />
       </div>
     </div>
   </footer>
