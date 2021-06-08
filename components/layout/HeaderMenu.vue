@@ -13,6 +13,7 @@
               :key="link.name"
               :href="link.href"
               class="text-base font-medium text-indigo-900  hover:text-indigo-700"
+              :class="linkSelectedClass(link.name)"
             >
               {{ link.name }}
             </a>
@@ -61,6 +62,7 @@
             :key="link.name"
             :href="link.href"
             class="text-base font-medium text-indigo-600 hover:text-indigo-800"
+            :class="linkSelectedClass(link.name)"
           >
             {{ link.name }}
           </a>
@@ -84,6 +86,12 @@ const navigation = [
 ]
 
 export default Vue.extend({
+  props: {
+    current: {
+      type: String,
+      required: true,
+    },
+  },
   data() {
     return {
       navigation,
@@ -91,6 +99,9 @@ export default Vue.extend({
     }
   },
   methods: {
+    linkSelectedClass(link: string) {
+      return this.current === link ? 'underline font-black' : ''
+    },
     // Toggle menu (open/close)
     openMenu() {
       this.isOpen = !this.isOpen

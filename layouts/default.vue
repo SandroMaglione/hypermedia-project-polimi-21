@@ -1,8 +1,5 @@
 <template>
   <div>
-    <!-- Same header with landmarks in all pages -->
-    <layout-header-menu />
-
     <Nuxt />
 
     <!-- Same chat box in all pages -->

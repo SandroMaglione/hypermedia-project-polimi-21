@@ -1,5 +1,7 @@
 <template>
   <div>
+    <layout-header-menu current="About us" />
+
     <!-- Company strengths 1 -->
     <section-feature-section
       title="This is out mission"

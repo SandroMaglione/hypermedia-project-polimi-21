@@ -1,5 +1,7 @@
 <template>
   <div>
+    <layout-header-menu current="Areas" />
+
     <div class="px-8 pb-20 bg-white sm:px-12 lg:pt-10 lg:pb-28 lg:px-16">
       <!-- Title of the page -->
       <base-section-title title="Areas" subtitle="Some areas" />

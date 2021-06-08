@@ -1,5 +1,7 @@
 <template>
   <div>
+    <layout-header-menu current="Home" />
+
     <!-- Homepage hero section presenting the company -->
     <section-hero-section />
     <!-- List of areas -->

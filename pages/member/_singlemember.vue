@@ -1,5 +1,7 @@
 <template>
   <div>
+    <layout-header-menu current="People" />
+
     <div class="px-8 pb-20 bg-white sm:px-12 lg:pt-10 lg:pb-28 lg:px-16">
       <!-- Navigation links -->
       <base-orientation-info
