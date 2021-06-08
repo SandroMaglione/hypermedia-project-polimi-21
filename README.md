@@ -41,6 +41,7 @@ Database: [PostgreSQL](https://supabase.io/database)
 - `section/GridSection.vue`: Shared between multiple routes. It contains a shared style and layout for grid of elements to display in different pages. This single component ensures a shared style between the website pages.
 - `section/FeatureSection.vue`: Shared between multiple routes. It contains a layout with an image on the left and a title and description on the right. Used to highlight specific section in multiple pages of the website.
 - `section/TestimonialsSection.vue`: Layout list for the testimonials section of the website (inside `aboutus.vue`).
+- `section/SocialNav.vue`: List of social networks links.
 
 ### Base
 

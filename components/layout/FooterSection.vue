@@ -4,7 +4,9 @@
       class="px-0 py-12 mx-auto  max-w-7xl sm:px-6 md:flex md:items-center md:justify-between lg:px-8"
     >
       <!-- Footer information -->
-      <div class="flex items-center justify-between w-full mt-8 mr-20">
+      <div
+        class="flex flex-col items-center justify-between w-full gap-8 mt-8  lg:mr-20 lg:flex-row"
+      >
         <div>
           <p
             class="text-base text-center text-indigo-400 underline  hover:text-indigo-700"
