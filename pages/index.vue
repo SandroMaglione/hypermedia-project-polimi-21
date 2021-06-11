@@ -44,13 +44,15 @@
 export default {
   async asyncData({ $supabase }) {
     // Retrieve all `area`, `team`, and `product` from database in the server (asyncData)
-    const { data: areas } = await $supabase.from('area').select()
-    const { data: people } = await $supabase.from('people').select()
-    const { data: products } = await $supabase.from('product').select()
-    return {
-      postsAreas: areas,
-      postsPeople: people,
-      postsProducts: products,
+    if (typeof $supabase !== 'undefined') {
+      const { data: areas } = await $supabase.from('area').select()
+      const { data: people } = await $supabase.from('people').select()
+      const { data: products } = await $supabase.from('product').select()
+      return {
+        postsAreas: areas,
+        postsPeople: people,
+        postsProducts: products,
+      }
     }
   },
   data() {
