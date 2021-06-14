@@ -6,7 +6,9 @@ import scrollBehavior from './router.scrollBehavior.js'
 
 const _9b7f451a = () => interopDefault(import('../pages/aboutus.vue' /* webpackChunkName: "pages/aboutus" */))
 const _8cfc1ae4 = () => interopDefault(import('../pages/areas.vue' /* webpackChunkName: "pages/areas" */))
+const _3a56c7c6 = () => interopDefault(import('../pages/contactus.vue' /* webpackChunkName: "pages/contactus" */))
 const _5ece0237 = () => interopDefault(import('../pages/people.vue' /* webpackChunkName: "pages/people" */))
+const _d9e930e0 = () => interopDefault(import('../pages/privacy.vue' /* webpackChunkName: "pages/privacy" */))
 const _34054a8c = () => interopDefault(import('../pages/products.vue' /* webpackChunkName: "pages/products" */))
 const _09c60bcc = () => interopDefault(import('../pages/area/_singlearea.vue' /* webpackChunkName: "pages/area/_singlearea" */))
 const _ae4aad98 = () => interopDefault(import('../pages/member/_singlemember.vue' /* webpackChunkName: "pages/member/_singlemember" */))
@@ -33,9 +35,17 @@ export const routerOptions = {
     component: _8cfc1ae4,
     name: "areas"
   }, {
+    path: "/contactus",
+    component: _3a56c7c6,
+    name: "contactus"
+  }, {
     path: "/people",
     component: _5ece0237,
     name: "people"
+  }, {
+    path: "/privacy",
+    component: _d9e930e0,
+    name: "privacy"
   }, {
     path: "/products",
     component: _34054a8c,

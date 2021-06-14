@@ -7,6 +7,7 @@ const components = {
   SectionFeatureSection: () => import('../../components/section/FeatureSection.vue' /* webpackChunkName: "components/section-feature-section" */).then(c => wrapFunctional(c.default || c)),
   SectionGridSection: () => import('../../components/section/GridSection.vue' /* webpackChunkName: "components/section-grid-section" */).then(c => wrapFunctional(c.default || c)),
   SectionHeroSection: () => import('../../components/section/HeroSection.vue' /* webpackChunkName: "components/section-hero-section" */).then(c => wrapFunctional(c.default || c)),
+  SectionSocialNav: () => import('../../components/section/SocialNav.vue' /* webpackChunkName: "components/section-social-nav" */).then(c => wrapFunctional(c.default || c)),
   SectionTestimonialsSection: () => import('../../components/section/TestimonialsSection.vue' /* webpackChunkName: "components/section-testimonials-section" */).then(c => wrapFunctional(c.default || c)),
   BaseChat: () => import('../../components/base/Chat.vue' /* webpackChunkName: "components/base-chat" */).then(c => wrapFunctional(c.default || c)),
   BaseOrientationInfo: () => import('../../components/base/OrientationInfo.vue' /* webpackChunkName: "components/base-orientation-info" */).then(c => wrapFunctional(c.default || c)),

@@ -11,6 +11,7 @@ You can directly use them in pages and other components without the need to impo
 - `<SectionFeatureSection>` | `<section-feature-section>` (components/section/FeatureSection.vue)
 - `<SectionGridSection>` | `<section-grid-section>` (components/section/GridSection.vue)
 - `<SectionHeroSection>` | `<section-hero-section>` (components/section/HeroSection.vue)
+- `<SectionSocialNav>` | `<section-social-nav>` (components/section/SocialNav.vue)
 - `<SectionTestimonialsSection>` | `<section-testimonials-section>` (components/section/TestimonialsSection.vue)
 - `<BaseChat>` | `<base-chat>` (components/base/Chat.vue)
 - `<BaseOrientationInfo>` | `<base-orientation-info>` (components/base/OrientationInfo.vue)

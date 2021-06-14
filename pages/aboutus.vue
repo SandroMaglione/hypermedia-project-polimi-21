@@ -4,27 +4,24 @@
 
     <!-- Company strengths 1 -->
     <section-feature-section
-      title="This is out mission"
-      desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, egestas
-          tempus tellus etiam sed. Quam a scelerisque amet ullamcorper eu enim
-          et fermentum, augue. Aliquet amet volutpat quisque ut interdum
-          tincidunt duis."
+      title="Our Vision"
+      desc="No matter which industry you belong to, every business must become digital"
+      image_url="https://media.istockphoto.com/photos/modern-business-background-glass-wall-in-the-office-or-airport-picture-id639507982"
     />
+
     <!-- Company strengths 2 -->
     <section-feature-section
-      title="This is out vision"
-      desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, egestas
-          tempus tellus etiam sed. Quam a scelerisque amet ullamcorper eu enim
-          et fermentum, augue. Aliquet amet volutpat quisque ut interdum
-          tincidunt duis."
+      title="Our Mission"
+      desc="Our mission is to enhance business growth of our customers with creative design, development and to deliver market defining high quality solutions that create value and reliable competitive advantage to customers around the globe."
+      image_url="https://media.istockphoto.com/photos/modern-business-background-glass-wall-in-the-office-or-airport-picture-id639507982"
+      left="true"
     />
+
     <!-- Company strengths 3 -->
     <section-feature-section
       title="We are project driven"
-      desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, egestas
-          tempus tellus etiam sed. Quam a scelerisque amet ullamcorper eu enim
-          et fermentum, augue. Aliquet amet volutpat quisque ut interdum
-          tincidunt duis."
+      desc="Our specialists make sure that they produce customized and verified solutions as per needs and requirements of the customers at par excellence."
+      image_url="https://media.istockphoto.com/photos/modern-business-background-glass-wall-in-the-office-or-airport-picture-id639507982"
     />
     <!-- Company's projects -->
     <section-grid-section

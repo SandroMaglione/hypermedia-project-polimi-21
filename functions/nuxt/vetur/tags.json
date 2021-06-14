@@ -14,6 +14,9 @@
   "SectionHeroSection": {
     "description": "Auto imported from components/section/HeroSection.vue"
   },
+  "SectionSocialNav": {
+    "description": "Auto imported from components/section/SocialNav.vue"
+  },
   "SectionTestimonialsSection": {
     "description": "Auto imported from components/section/TestimonialsSection.vue"
   },
