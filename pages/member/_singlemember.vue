@@ -17,7 +17,15 @@
         <div class="flex flex-col lg:flex-row">
           <div
             :style="{ backgroundImage: `url(${singleMember.image_url})` }"
-            class="w-full bg-gray-300 bg-cover border border-gray-400 rounded-lg shadow-lg  h-60 lg:w-60"
+            class="
+              w-full
+              bg-gray-300 bg-cover
+              border border-gray-400
+              rounded-lg
+              shadow-lg
+              h-60
+              lg:w-60
+            "
           ></div>
           <div class="pt-8 lg:p-10">
             <h2 class="text-5xl font-bold tracking-wider">
@@ -42,11 +50,6 @@
             title="Education"
             :subtitle="singleMember.education"
           />
-        </div>
-
-        <!-- Work -->
-        <div>
-          <base-section-title title="Work" :subtitle="singleMember.work" />
         </div>
       </div>
     </div>

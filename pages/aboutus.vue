@@ -6,14 +6,14 @@
     <section-feature-section
       title="Our Vision"
       desc="No matter which industry you belong to, every business must become digital"
-      image_url="https://media.istockphoto.com/photos/modern-business-background-glass-wall-in-the-office-or-airport-picture-id639507982"
+      image_url="https://previews.123rf.com/images/guykantawan/guykantawan1706/guykantawan170600012/81210378-doppia-esposizione-di-monete-e-concetto-di-sfondo-finanza-e-affari-di-sfondo-della-città.jpg"
     />
 
     <!-- Company strengths 2 -->
     <section-feature-section
       title="Our Mission"
       desc="Our mission is to enhance business growth of our customers with creative design, development and to deliver market defining high quality solutions that create value and reliable competitive advantage to customers around the globe."
-      image_url="https://media.istockphoto.com/photos/modern-business-background-glass-wall-in-the-office-or-airport-picture-id639507982"
+      image_url="https://previews.123rf.com/images/guykantawan/guykantawan1706/guykantawan170600012/81210378-doppia-esposizione-di-monete-e-concetto-di-sfondo-finanza-e-affari-di-sfondo-della-città.jpg"
       left="true"
     />
 
@@ -21,7 +21,7 @@
     <section-feature-section
       title="We are project driven"
       desc="Our specialists make sure that they produce customized and verified solutions as per needs and requirements of the customers at par excellence."
-      image_url="https://media.istockphoto.com/photos/modern-business-background-glass-wall-in-the-office-or-airport-picture-id639507982"
+      image_url="https://previews.123rf.com/images/guykantawan/guykantawan1706/guykantawan170600012/81210378-doppia-esposizione-di-monete-e-concetto-di-sfondo-finanza-e-affari-di-sfondo-della-città.jpg"
     />
     <!-- Company's projects -->
     <section-grid-section
