@@ -4,14 +4,23 @@
 
     <div class="px-8 pb-20 bg-white sm:px-12 lg:pt-10 lg:pb-28 lg:px-16">
       <!-- Header title -->
-      <base-section-title title="People" subtitle="Some people" />
+      <base-section-title
+        title="People"
+        subtitle="All the people working in our company"
+      />
 
       <!-- Display single member information -->
       <div class="grid grid-cols-1 gap-4 mt-10 md:grid-cols-2 lg:grid-cols-3">
         <div
           v-for="member in this.searchMember"
           :key="member.id"
-          class="flex flex-col bg-indigo-900 border border-gray-300 rounded-lg shadow-lg "
+          class="
+            flex flex-col
+            bg-indigo-900
+            border border-gray-300
+            rounded-lg
+            shadow-lg
+          "
         >
           <a :href="hrefLink(member.id)">
             <div class="w-full bg-gray-300 h-60">

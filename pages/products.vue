@@ -4,14 +4,22 @@
 
     <div class="px-8 pb-20 bg-white sm:px-12 lg:pt-10 lg:pb-28 lg:px-16">
       <!-- Header title -->
-      <base-section-title title="Products" subtitle="Some products" />
+      <base-section-title title="Products" subtitle="All our products" />
 
       <!-- Display information about each product -->
       <div class="flex flex-col gap-8 mt-10">
         <div
           v-for="product in this.searchProduct"
           :key="product.id"
-          class="flex flex-col justify-center bg-indigo-900 border border-gray-400 rounded-lg shadow-lg  lg:flex-row"
+          class="
+            flex flex-col
+            justify-center
+            bg-indigo-900
+            border border-gray-400
+            rounded-lg
+            shadow-lg
+            lg:flex-row
+          "
         >
           <div class="flex-1 h-72">
             <img
