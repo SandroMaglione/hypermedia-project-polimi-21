@@ -200,7 +200,7 @@ export async function setContext (app, context) {
       payload: context.payload,
       error: context.error,
       base: app.router.options.base,
-      env: {"configurationId":"f630f0af-8ec8-4caf-b9b3-bdef8462df01","supabaseKey":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic2VydmljZV9yb2xlIiwiaWF0IjoxNjIxMjYxODA2LCJleHAiOjE5MzY4Mzc4MDZ9.jFt9LKNeIeJ5DZEtKIHWe71neRbSxL9TC-FmyB-0Sc8","supabaseUrl":"https://wemtonqwokryfponsnhm.supabase.co"}
+      env: {"configurationId":"1f63ced0-f8c7-4d63-9274-fd881511f1d3","supabaseKey":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic2VydmljZV9yb2xlIiwiaWF0IjoxNjIxMjYxODA2LCJleHAiOjE5MzY4Mzc4MDZ9.jFt9LKNeIeJ5DZEtKIHWe71neRbSxL9TC-FmyB-0Sc8","supabaseUrl":"https://wemtonqwokryfponsnhm.supabase.co"}
     }
     // Only set once
 

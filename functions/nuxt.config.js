@@ -49,7 +49,7 @@ module.exports = {
 
   env: {
     // Chatbot configuration id
-    configurationId: 'f630f0af-8ec8-4caf-b9b3-bdef8462df01',
+    configurationId: '1f63ced0-f8c7-4d63-9274-fd881511f1d3',
 
     // Database Key and URL
     supabaseKey:
