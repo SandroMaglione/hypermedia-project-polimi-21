@@ -9,7 +9,7 @@
       <!-- Display single areas -->
       <div class="flex flex-col gap-8 mt-10">
         <div
-          v-for="area in this.postsAreas"
+          v-for="area in postsAreas"
           :key="area.id"
           :style="{ backgroundImage: `url(${area.image_url})` }"
           class="

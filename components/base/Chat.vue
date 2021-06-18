@@ -3,7 +3,16 @@
     <div v-if="isOpen" class="flex flex-col p-3 rounded-md w-72 h-96">
       <div
         id="chat-window"
-        class="flex-1 p-3 space-y-3 overflow-y-scroll border border-indigo-500 shadow  rounded-t-md bg-gray-50"
+        class="
+          flex-1
+          p-3
+          space-y-3
+          overflow-y-scroll
+          border border-indigo-500
+          shadow
+          rounded-t-md
+          bg-gray-50
+        "
       >
         <div
           v-for="(message, messageIndex) of chatList"
@@ -34,7 +43,16 @@
       </div>
     </div>
     <div
-      class="w-16 h-16 p-4 bg-white border border-indigo-600 rounded-full shadow  hover:cursor-pointer"
+      class="
+        w-16
+        h-16
+        p-4
+        bg-white
+        border border-indigo-600
+        rounded-full
+        shadow
+        hover:cursor-pointer
+      "
       @click="isOpen = !isOpen"
     >
       <img src="https://img.icons8.com/ios-filled/452/chat--v1.png" alt="" />
@@ -53,7 +71,7 @@ export default {
   data() {
     return {
       messageToSend: '',
-      isOpen: true,
+      isOpen: false,
     }
   },
   methods: {
