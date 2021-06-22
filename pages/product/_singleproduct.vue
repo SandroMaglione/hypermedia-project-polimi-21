@@ -15,11 +15,19 @@
       <div class="pt-10 mt-6 mb-10 border-t border-gray-300">
         <div
           :style="{ backgroundImage: `url(${singleProduct.image_url})` }"
-          class="relative flex items-center justify-center bg-gray-300 border border-gray-400 rounded-lg shadow-xl  h-60"
+          class="
+            relative
+            flex
+            items-center
+            justify-center
+            bg-gray-300
+            border border-gray-400
+            rounded-lg
+            shadow-xl
+            h-60
+          "
         >
-          <div
-            class="absolute inset-0 bg-indigo-900 rounded-lg opacity-75"
-          ></div>
+          <div class="absolute inset-0 bg-blue-900 rounded-lg opacity-75"></div>
           <h1 class="z-50 text-6xl font-black text-white">
             {{ singleProduct.name }}
           </h1>
@@ -51,7 +59,14 @@
           </div>
           <div class="flex-1 w-full lg:w-auto">
             <div
-              class="py-24 text-center bg-gray-300 border border-gray-400 shadow-xl  h-72"
+              class="
+                py-24
+                text-center
+                bg-gray-300
+                border border-gray-400
+                shadow-xl
+                h-72
+              "
             >
               <span class="text-5xl font-bold tracking-widest text-gray-900"
                 >Pricing 2</span

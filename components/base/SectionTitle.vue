@@ -20,18 +20,18 @@
         py-1.5
         text-sm
         font-bold
-        text-indigo-600
+        text-blue-600
         bg-white
         border border-gray-300
         rounded-md
         shadow-sm
-        hover:bg-indigo-600
+        hover:bg-blue-600
         hover:text-white
         transition-all
         duration-150
         ease-in-out
         focus:outline-none
-        focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500
+        focus:ring-2 focus:ring-offset-2 focus:ring-blue-500
       "
     >
       {{ link.label }}

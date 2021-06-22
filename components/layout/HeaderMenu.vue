@@ -3,7 +3,18 @@
     <!-- Navigation menu -->
     <nav class="px-0 mx-auto max-w-7xl sm:px-6 lg:px-8" aria-label="Top">
       <div
-        class="flex items-center justify-between hidden w-full py-6 border-b border-indigo-500  lg:items-center lg:border-none lg:flex"
+        class="
+          flex
+          items-center
+          justify-between
+          hidden
+          w-full
+          py-6
+          border-b border-blue-500
+          lg:items-center
+          lg:border-none
+          lg:flex
+        "
       >
         <div class="flex items-center flex-1">
           <div class="hidden ml-4 space-x-8 lg:block">
@@ -12,7 +23,7 @@
               v-for="link in navigation"
               :key="link.name"
               :href="link.href"
-              class="text-base font-medium text-indigo-900  hover:text-indigo-700"
+              class="text-base font-medium text-blue-900 hover:text-blue-700"
               :class="linkSelectedClass(link.name)"
             >
               {{ link.name }}
@@ -28,7 +39,7 @@
       <div class="px-4 py-6 lg:hidden">
         <div class="flex items-center justify-end w-full">
           <div class="flex-1">
-            <span class="text-xl font-black tracking-tight text-indigo-900"
+            <span class="text-xl font-black tracking-tight text-blue-900"
               >Rocket Inc.</span
             >
           </div>
@@ -37,7 +48,7 @@
           <div class="flex-none">
             <button type="button" @click="openMenu">
               <svg
-                class="w-8 h-8 text-indigo-800"
+                class="w-8 h-8 text-blue-800"
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg"
@@ -55,13 +66,23 @@
         <!-- Open menu on mobile (hidden in desktop) -->
         <div
           v-if="isOpen"
-          class="flex flex-col justify-center py-4 space-y-3 text-lg text-center  lg:text-base lg:text-left lg:flex-wrap lg:space-x-6 lg:hidden"
+          class="
+            flex flex-col
+            justify-center
+            py-4
+            space-y-3
+            text-lg text-center
+            lg:text-base lg:text-left
+            lg:flex-wrap
+            lg:space-x-6
+            lg:hidden
+          "
         >
           <a
             v-for="link in navigation"
             :key="link.name"
             :href="link.href"
-            class="text-base font-medium text-indigo-600 hover:text-indigo-800"
+            class="text-base font-medium text-blue-600 hover:text-blue-800"
             :class="linkSelectedClass(link.name)"
           >
             {{ link.name }}

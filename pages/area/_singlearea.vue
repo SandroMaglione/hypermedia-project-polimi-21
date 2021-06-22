@@ -14,11 +14,20 @@
       <div class="pt-10 mt-6 mb-10 border-t border-gray-300">
         <div
           :style="{ backgroundImage: `url(${singleArea.image_url})` }"
-          class="relative flex items-center justify-center mt-4 bg-gray-300 bg-cover border border-gray-400 rounded-lg shadow-xl  h-72"
+          class="
+            relative
+            flex
+            items-center
+            justify-center
+            mt-4
+            bg-gray-300 bg-cover
+            border border-gray-400
+            rounded-lg
+            shadow-xl
+            h-72
+          "
         >
-          <div
-            class="absolute inset-0 bg-indigo-900 rounded-lg opacity-75"
-          ></div>
+          <div class="absolute inset-0 bg-blue-900 rounded-lg opacity-75"></div>
           <h1 class="z-50 text-6xl font-black text-white">
             {{ singleArea.name }}
           </h1>

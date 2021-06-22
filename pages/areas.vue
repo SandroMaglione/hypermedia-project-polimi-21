@@ -25,9 +25,7 @@
             bg-gray-50
           "
         >
-          <div
-            class="absolute inset-0 bg-indigo-900 rounded-lg opacity-75"
-          ></div>
+          <div class="absolute inset-0 bg-blue-900 rounded-lg opacity-75"></div>
           <div class="z-50 text-center">
             <a :href="hrefLink(area.id)" class="text-white hover:underline">
               <h2 class="text-6xl font-bold tracking-wider text-white">

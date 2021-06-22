@@ -14,7 +14,7 @@
           class="
             flex flex-col
             justify-center
-            bg-indigo-900
+            bg-blue-900
             border border-gray-400
             rounded-lg
             shadow-lg

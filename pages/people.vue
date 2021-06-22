@@ -16,7 +16,7 @@
           :key="member.id"
           class="
             flex flex-col
-            bg-indigo-900
+            bg-blue-900
             border border-gray-300
             rounded-lg
             shadow-lg

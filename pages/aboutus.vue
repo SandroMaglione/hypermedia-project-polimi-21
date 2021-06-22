@@ -57,7 +57,7 @@ export default Vue.extend({
           category: {
             name: 'Article',
             href: '#',
-            color: 'bg-indigo-100 text-indigo-800',
+            color: 'bg-blue-100 text-blue-800',
           },
           description:
             'Nullam risus blandit ac aliquam justo ipsum. Quam mauris volutpat massa dictumst amet. Sapien tortor lacus arcu.',

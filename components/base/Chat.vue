@@ -8,7 +8,7 @@
           p-3
           space-y-3
           overflow-y-scroll
-          border border-indigo-500
+          border border-blue-500
           shadow
           rounded-t-md
           bg-gray-50
@@ -30,14 +30,7 @@
           v-model="messageToSend"
           type="text"
           placeholder="Write here"
-          class="
-            border border-indigo-500
-            w-full
-            text-lg
-            rounded-b-md
-            px-3
-            py-1.5
-          "
+          class="border border-blue-500 w-full text-lg rounded-b-md px-3 py-1.5"
           @keypress.enter="sendMessage"
         />
       </div>
@@ -48,7 +41,7 @@
         h-16
         p-4
         bg-white
-        border border-indigo-600
+        border border-blue-600
         rounded-full
         shadow
         hover:cursor-pointer

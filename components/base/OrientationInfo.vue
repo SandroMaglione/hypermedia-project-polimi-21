@@ -14,12 +14,12 @@
           px-6
           py-1.5
           font-bold
-          text-sm text-indigo-600
+          text-sm text-blue-600
           bg-white
-          border border-indigo-400
+          border border-blue-400
           rounded-md
           shadow
-          hover:bg-indigo-600
+          hover:bg-blue-600
           hover:text-white
           transition-all
           duration-150
@@ -34,12 +34,12 @@
           px-6
           py-1.5
           font-bold
-          text-sm text-indigo-600
+          text-sm text-blue-600
           bg-white
-          border border-indigo-400
+          border border-blue-400
           rounded-md
           shadow
-          hover:bg-indigo-600
+          hover:bg-blue-600
           hover:text-white
           transition-all
           duration-150
