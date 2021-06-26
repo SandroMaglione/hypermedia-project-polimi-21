@@ -14,7 +14,7 @@ import { createStore } from './store.js'
 /* Plugins */
 
 import nuxt_plugin_plugin_a1f62724 from 'nuxt_plugin_plugin_a1f62724' // Source: ./components/plugin.js (mode: 'all')
-import nuxt_plugin_supabaseserver_52103180 from 'nuxt_plugin_supabaseserver_52103180' // Source: ../plugins/supabase.server.js (mode: 'server')
+import nuxt_plugin_supabase_6fd7c51d from 'nuxt_plugin_supabase_6fd7c51d' // Source: ../plugins/supabase.js (mode: 'all')
 import nuxt_plugin_mmcc_2c777bc1 from 'nuxt_plugin_mmcc_2c777bc1' // Source: ../plugins/mmcc.js (mode: 'client')
 
 // Component: <ClientOnly>
@@ -216,8 +216,8 @@ async function createApp(ssrContext, config = {}) {
     await nuxt_plugin_plugin_a1f62724(app.context, inject)
   }
 
-  if (process.server && typeof nuxt_plugin_supabaseserver_52103180 === 'function') {
-    await nuxt_plugin_supabaseserver_52103180(app.context, inject)
+  if (typeof nuxt_plugin_supabase_6fd7c51d === 'function') {
+    await nuxt_plugin_supabase_6fd7c51d(app.context, inject)
   }
 
   if (process.client && typeof nuxt_plugin_mmcc_2c777bc1 === 'function') {

@@ -19,7 +19,7 @@ module.exports = {
   css: [],
 
   plugins: [
-    { src: '~/plugins/supabase.server.js', mode: 'server' },
+    { src: '~/plugins/supabase.js' },
     { src: '~/plugins/mmcc.js', mode: 'client' },
   ],
 
