@@ -44,17 +44,29 @@
       </div>
 
       <!-- Product pricing -->
-      <div>
+      <div v-if="hasPrices" class="mb-20">
         <base-section-title
           title="Product pricing"
           subtitle="Different prices available for the product"
         />
         <div class="flex flex-col items-end gap-10 mt-12 lg:flex-row">
           <div class="flex-1 w-full lg:w-auto">
-            <div class="py-20 text-center bg-gray-300 h-60">
-              <span class="text-3xl font-bold tracking-widest text-gray-900"
-                >Pricing 1</span
+            <div class="py-20 text-center bg-indigo-300 h-60">
+              <p class="text-3xl font-bold tracking-widest text-gray-900">
+                {{ singleProduct.prices[0].amount }}€
+              </p>
+              <span
+                class="
+                  inline-block
+                  mt-4
+                  text-xl
+                  font-medium
+                  tracking-tight
+                  text-gray-800
+                "
               >
+                {{ singleProduct.prices[0].name }}
+              </span>
             </div>
           </div>
           <div class="flex-1 w-full lg:w-auto">
@@ -62,22 +74,46 @@
               class="
                 py-24
                 text-center
-                bg-gray-300
+                bg-indigo-700
                 border border-gray-400
                 shadow-xl
                 h-72
               "
             >
-              <span class="text-5xl font-bold tracking-widest text-gray-900"
-                >Pricing 2</span
+              <p class="text-5xl font-black tracking-widest text-white">
+                {{ singleProduct.prices[1].amount }}€
+              </p>
+              <span
+                class="
+                  inline-block
+                  mt-6
+                  text-2xl
+                  font-medium
+                  tracking-tight
+                  text-white
+                "
               >
+                {{ singleProduct.prices[1].name }}
+              </span>
             </div>
           </div>
           <div class="flex-1 w-full lg:w-auto">
-            <div class="py-20 text-center bg-gray-300 h-60">
-              <span class="text-3xl font-bold tracking-widest text-gray-900"
-                >Pricing 3</span
+            <div class="py-20 text-center bg-indigo-300 h-60">
+              <p class="text-3xl font-bold tracking-widest text-gray-900">
+                {{ singleProduct.prices[2].amount }}€
+              </p>
+              <span
+                class="
+                  inline-block
+                  mt-4
+                  text-xl
+                  font-medium
+                  tracking-tight
+                  text-gray-800
+                "
               >
+                {{ singleProduct.prices[2].name }}
+              </span>
             </div>
           </div>
         </div>
@@ -100,7 +136,7 @@ export default {
     // Retrieve information about a single product (by id)
     const myProductId = route.params.singleproduct
     const { data: product } = await $supabase
-      .from('product')
+      .from('product_with_price')
       .select()
       .eq('id', myProductId)
       .single()
@@ -141,6 +177,11 @@ export default {
   },
   // SEO metadata computed from product information
   computed: {
+    // Check that prices are defined for this product
+    hasPrices() {
+      return this.singleProduct.prices.length > 0
+    },
+    // Compute label for orientation text
     orientationLabel() {
       return 'Product / ' + this.singleProduct.name
     },
