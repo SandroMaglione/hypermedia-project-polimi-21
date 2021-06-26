@@ -65,7 +65,8 @@ export default Vue.extend({
     },
     left: {
       type: Boolean,
-      required: true,
+      required: false,
+      default: false,
     },
   },
 })

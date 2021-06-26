@@ -9,7 +9,11 @@
       >
         <!-- Grid of elements to display -->
         <div v-for="post in posts" :key="post.id">
-          <a :href="subhrefLink(post.id)" class="block">
+          <!-- Link to website page or external website if 'externalLink' is true (projects section) -->
+          <a
+            :href="subhrefLink(externalLink ? post.website_url : post.id)"
+            class="block"
+          >
             <div
               class="flex-shrink-0 transition-transform duration-150 ease-in-out transform  hover:scale-105"
             >
@@ -62,11 +66,16 @@ export default Vue.extend({
       required: false,
       default: '#',
     },
+    externalLink: {
+      type: Boolean,
+      require: false,
+      default: false,
+    },
   },
   methods: {
     // Link to sub-page
-    subhrefLink(id: string) {
-      return this.subhref + '/' + id
+    subhrefLink(idOrLink: string) {
+      return this.externalLink ? idOrLink : this.subhref + '/' + idOrLink
     },
   },
 })
