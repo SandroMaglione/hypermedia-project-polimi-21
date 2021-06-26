@@ -89,7 +89,7 @@
             class="flex flex-col p-6 space-y-1 border border-gray-100 shadow"
           >
             <span class="label">Email</span>
-            <p class="text-2xl font-light">ouremail@company.info.com</p>
+            <p class="text-2xl font-light">info@rocketinc.com</p>
           </div>
           <div
             class="flex flex-col p-6 space-y-1 border border-gray-100 shadow"
@@ -101,7 +101,7 @@
             class="flex flex-col p-6 space-y-1 border border-gray-100 shadow"
           >
             <span class="label">CEO</span>
-            <p class="text-2xl font-light">Daniel Johnson</p>
+            <p class="text-2xl font-light">Mattia Libralato</p>
           </div>
           <div
             class="flex flex-col p-6 space-y-1 border border-gray-100 shadow"

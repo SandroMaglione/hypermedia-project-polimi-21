@@ -7,11 +7,27 @@
           <img class="object-cover w-full h-full" :src="image_url" alt="" />
         </div>
         <div
-          class="relative px-4 py-12 mx-auto  max-w-7xl sm:px-6 lg:px-20 lg:py-28"
+          class="
+            relative
+            px-4
+            py-12
+            mx-auto
+            max-w-7xl
+            sm:px-6
+            lg:px-20
+            lg:py-28
+          "
         >
           <div class="md:ml-auto md:w-1/2 md:pl-20">
             <p
-              class="mt-2 text-3xl font-extrabold tracking-tight text-gray-900  sm:text-4xl"
+              class="
+                mt-2
+                text-3xl
+                font-extrabold
+                tracking-tight
+                text-gray-900
+                sm:text-4xl
+              "
             >
               {{ title }}
             </p>
@@ -28,7 +44,14 @@
         <div class="flex-1 lg:py-24">
           <div class="px-4 py-12 md:pr-20 md:pl-20">
             <p
-              class="mt-2 text-3xl font-extrabold tracking-tight text-gray-900  sm:text-4xl"
+              class="
+                mt-2
+                text-3xl
+                font-extrabold
+                tracking-tight
+                text-gray-900
+                sm:text-4xl
+              "
             >
               {{ title }}
             </p>
