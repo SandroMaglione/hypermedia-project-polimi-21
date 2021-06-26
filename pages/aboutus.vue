@@ -37,10 +37,8 @@
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-
-export default Vue.extend({
+<script>
+export default {
   async asyncData({ $supabase }) {
     if (typeof $supabase !== 'undefined') {
       // Retrieve list of all projects and testimonials in the server (asyncData)
@@ -71,5 +69,5 @@ export default Vue.extend({
       ],
     }
   },
-})
+}
 </script>

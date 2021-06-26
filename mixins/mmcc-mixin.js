@@ -29,8 +29,6 @@ export default {
         })
       }
 
-      console.log({ message })
-
       if (message.payload) {
         if (message.payload.guide) {
           this.$router.push(message.payload.guide)
