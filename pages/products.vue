@@ -4,7 +4,10 @@
 
     <div class="px-8 pb-20 bg-white sm:px-12 lg:pt-10 lg:pb-28 lg:px-16">
       <!-- Header title -->
-      <base-section-title title="Products" subtitle="All our products" />
+      <base-section-title
+        title="Products"
+        subtitle="All the products offered by the company"
+      />
 
       <!-- Display information about each product -->
       <div class="flex flex-col gap-8 mt-10">
