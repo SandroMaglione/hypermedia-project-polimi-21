@@ -22,7 +22,9 @@ UI design, Folder structure and project organization, Routes and Components styl
 
 ## Server and Database
 
-For the backend technology we decided to implement Supabase, a cloud solution very similar to Firebase, but with a SQL-based database.
+For the backend technology we decided to implement Supabase, a cloud solution very similar to Firebase, but with a SQL-based database. 
+
+Supabase provides a web platform where you can manage your database tables. The platform allows you to create, edit, and delete tables directly in your browser. Supabase features a PostgreSQL database under the hood. Nonetheless, no connection with the PostgreSQL instance is required, since it is possible to manage the backend (tables and data) directly from the web platform.
 
 Server: [Supabase](https://supabase.io)
 

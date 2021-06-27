@@ -4,7 +4,10 @@
 
     <div class="px-8 pb-20 bg-white sm:px-12 lg:pt-10 lg:pb-28 lg:px-16">
       <!-- Title of the page -->
-      <base-section-title title="Areas" subtitle="All our areas" />
+      <base-section-title
+        title="Areas"
+        subtitle="All the areas in which Rocket Inc. is working on"
+      />
 
       <!-- Display single areas -->
       <div class="flex flex-col gap-8 mt-10">
@@ -12,18 +15,7 @@
           v-for="area in postsAreas"
           :key="area.id"
           :style="{ backgroundImage: `url(${area.image_url})` }"
-          class="
-            relative
-            flex
-            items-center
-            justify-center
-            py-16
-            bg-cover
-            border border-gray-400
-            rounded-lg
-            shadow-lg
-            bg-gray-50
-          "
+          class="relative flex items-center justify-center py-16 bg-cover border border-gray-400 rounded-lg shadow-lg  bg-gray-50"
         >
           <div class="absolute inset-0 bg-blue-900 rounded-lg opacity-75"></div>
           <div class="z-50 text-center">
