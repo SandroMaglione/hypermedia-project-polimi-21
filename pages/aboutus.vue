@@ -13,7 +13,7 @@
     <section-feature-section
       title="Our Mission"
       desc="Our mission is to enhance business growth of our customers with creative design, development and to deliver market defining high quality solutions that create value and reliable competitive advantage to customers around the globe."
-      image_url="https://previews.123rf.com/images/guykantawan/guykantawan1706/guykantawan170600012/81210378-doppia-esposizione-di-monete-e-concetto-di-sfondo-finanza-e-affari-di-sfondo-della-città.jpg"
+      image_url="https://www.iso37001-2016.it/wp-content/uploads/2019/01/people-background.jpg"
       :left="true"
     />
 
@@ -21,7 +21,7 @@
     <section-feature-section
       title="We are project driven"
       desc="Our specialists make sure that they produce customized and verified solutions as per needs and requirements of the customers at par excellence."
-      image_url="https://previews.123rf.com/images/guykantawan/guykantawan1706/guykantawan170600012/81210378-doppia-esposizione-di-monete-e-concetto-di-sfondo-finanza-e-affari-di-sfondo-della-città.jpg"
+      image_url="https://image.freepik.com/free-vector/futuristic-idea-background-with-glowing-low-polygonal-light-bulb-human-hand_67515-692.jpg"
     />
     <!-- Company's projects -->
     <section-grid-section

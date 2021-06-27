@@ -40,12 +40,6 @@
         :desc="singleArea.description"
       />
 
-      <!-- More information -->
-      <section-feature-section
-        title="More information"
-        :desc="singleArea.more_info"
-      />
-
       <!-- List of products -->
       <section-grid-section
         title="Products of this Area"
