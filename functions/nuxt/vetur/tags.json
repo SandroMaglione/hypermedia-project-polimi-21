@@ -23,6 +23,9 @@
   "BaseChat": {
     "description": "Auto imported from components/base/Chat.vue"
   },
+  "BaseGridContainer": {
+    "description": "Auto imported from components/base/GridContainer.vue"
+  },
   "BaseOrientationInfo": {
     "description": "Auto imported from components/base/OrientationInfo.vue"
   },

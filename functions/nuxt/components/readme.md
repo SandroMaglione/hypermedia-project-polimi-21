@@ -14,5 +14,6 @@ You can directly use them in pages and other components without the need to impo
 - `<SectionSocialNav>` | `<section-social-nav>` (components/section/SocialNav.vue)
 - `<SectionTestimonialsSection>` | `<section-testimonials-section>` (components/section/TestimonialsSection.vue)
 - `<BaseChat>` | `<base-chat>` (components/base/Chat.vue)
+- `<BaseGridContainer>` | `<base-grid-container>` (components/base/GridContainer.vue)
 - `<BaseOrientationInfo>` | `<base-orientation-info>` (components/base/OrientationInfo.vue)
 - `<BaseSectionTitle>` | `<base-section-title>` (components/base/SectionTitle.vue)

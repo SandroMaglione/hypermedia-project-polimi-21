@@ -123,7 +123,7 @@
       <section-grid-section
         title="People working on this Product"
         subtitle="All the people working on the product"
-        subhref="/product"
+        subhref="/member"
         :posts="productPeople"
       />
     </div>
