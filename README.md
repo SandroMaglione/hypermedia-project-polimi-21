@@ -47,6 +47,7 @@ Database: [PostgreSQL](https://supabase.io/database)
 
 ### Base
 
+- `base/GridContainer.vue`: A container that is used inside `GridSection` to display an image and a title.
 - `base/OrientationInfo.vue`: Components used to display information about the current and previous pages.
 - `base/SectionTitle.vue`: Shared style and layout for the title of each section of the website.
 - `base/Chat.vue`: Contains the code to display and use the chatbot in the website. It is included in all pages inside `default.vue` layout.
@@ -64,6 +65,7 @@ Database: [PostgreSQL](https://supabase.io/database)
 - **Environment variables**: We used `env` variables (defined in `nuxt.config.js`) for both the chatbot key and supabase url and key.
 - **Auto-import components**: Instead of importing the components in all pages, we used an awesome feature provided by NuxtJs. We added `components` in `nuxt.config.js` so we can define a prefix to used for the components of the project. By doing this, NuxtJs will auto-import the component in the page without requiring the import manually.
 - **SEO**: To improve the SEO ranking of our website, we used the `head` function provided by NuxtJs in all the pages to define some metadata used by search engines. Furthermore, we created a `robots.txt` file in the `static` folder that allows all agents to visit the website.
+- **router**: We used Vue Router (`NuxtLink`) to navigate between internal pages of the website. Furthermore, NuxtJs allows us to define all the routes inside the `pages` folder, without the need to define and connect all the routes manaully.
 - **store**: We used NuxtJs `store` folder only for the chatbot implementation.
 - **mixins**: We used NuxtJs `mixins` folder only for the chatbot implementation.
 - **Typescript**: We used `@nuxt/typescript-build` (defined in `build` inside `nuxt.config.js`) to enable typescript support in the project.

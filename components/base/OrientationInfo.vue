@@ -7,9 +7,9 @@
       }}</span>
     </div>
     <div class="flex gap-8">
-      <a
+      <NuxtLink
         v-if="href1 != null"
-        :href="href1"
+        :to="href1"
         class="
           px-6
           py-1.5
@@ -25,11 +25,11 @@
           duration-150
           ease-in-out
         "
-        >{{ link1 }}</a
+        >{{ link1 }}</NuxtLink
       >
-      <a
+      <NuxtLink
         v-if="href2 != null"
-        :href="href2"
+        :to="href2"
         class="
           px-6
           py-1.5
@@ -45,7 +45,7 @@
           duration-150
           ease-in-out
         "
-        >{{ link2 }}</a
+        >{{ link2 }}</NuxtLink
       >
     </div>
   </div>

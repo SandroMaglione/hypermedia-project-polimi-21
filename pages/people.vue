@@ -14,20 +14,14 @@
         <div
           v-for="member in this.searchMember"
           :key="member.id"
-          class="
-            flex flex-col
-            bg-blue-900
-            border border-gray-300
-            rounded-lg
-            shadow-lg
-          "
+          class="flex flex-col bg-blue-900 border border-gray-300 rounded-lg shadow-lg "
         >
-          <a :href="hrefLink(member.id)">
+          <NuxtLink :to="hrefLink(member.id)">
             <div class="w-full bg-gray-300 h-60">
               <img
                 class="object-cover w-full rounded-t-lg h-60"
                 :src="member.image_url"
-                alt=""
+                alt="Profile image"
               />
             </div>
             <div class="px-6 py-5">
@@ -36,7 +30,7 @@
               </h2>
               <p class="font-medium text-white text-md">{{ member.role }}</p>
             </div>
-          </a>
+          </NuxtLink>
         </div>
       </div>
     </div>

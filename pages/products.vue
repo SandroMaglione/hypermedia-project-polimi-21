@@ -14,30 +14,22 @@
         <div
           v-for="product in this.searchProduct"
           :key="product.id"
-          class="
-            flex flex-col
-            justify-center
-            bg-blue-900
-            border border-gray-400
-            rounded-lg
-            shadow-lg
-            lg:flex-row
-          "
+          class="flex flex-col justify-center bg-blue-900 border border-gray-400 rounded-lg shadow-lg  lg:flex-row"
         >
           <div class="flex-1 h-72">
             <img
               class="object-cover w-full h-72"
               :src="product.image_url"
-              :alt="product.image_url"
+              alt="Product image"
             />
           </div>
           <div class="flex-1 p-10">
-            <a :href="hrefLink(product.id)">
+            <NuxtLink :to="hrefLink(product.id)">
               <h2 class="text-5xl font-black text-white">{{ product.name }}</h2>
               <p class="text-2xl font-medium text-white">
                 {{ product.description }}
               </p>
-            </a>
+            </NuxtLink>
           </div>
         </div>
       </div>

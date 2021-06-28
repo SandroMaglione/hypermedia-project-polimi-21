@@ -10,15 +10,7 @@
           subtitle="Use the online form to send us your message"
         />
         <div
-          class="
-            flex flex-col
-            p-10
-            mt-8
-            space-y-8
-            border border-gray-200
-            rounded-md
-            shadow-md
-          "
+          class="flex flex-col p-10 mt-8 space-y-8 border border-gray-200 rounded-md shadow-md "
         >
           <div class="flex flex-col space-y-2">
             <label for="fullname" class="label">Full name</label>
@@ -56,21 +48,9 @@
           <div>
             <button
               type="submit"
-              class="
-                w-full
-                py-3
-                text-lg
-                font-black
-                tracking-tight
-                text-center text-blue-800
-                transition-all
-                duration-150
-                ease-in-out
-                border-2 border-blue-700
-                rounded-2xl
-                hover:bg-blue-600
-                hover:text-white
-              "
+              :disabled="true"
+              title="Not implemented"
+              class="w-full py-3 text-lg font-black tracking-tight text-center text-blue-800 transition-all duration-150 ease-in-out border-2 border-blue-700 cursor-not-allowed  opacity-30 rounded-2xl"
             >
               Send message
             </button>

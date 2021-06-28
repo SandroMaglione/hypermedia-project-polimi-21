@@ -11,28 +11,21 @@
         <div v-for="post in posts" :key="post.id">
           <!-- Link to website page or external website if 'externalLink' is true (projects section) -->
           <a
-            :href="subhrefLink(externalLink ? post.website_url : post.id)"
+            v-if="externalLink"
+            :href="subhrefLink(post.website_url)"
             class="block"
           >
-            <div
-              class="flex-shrink-0 transition-transform duration-150 ease-in-out transform  hover:scale-105"
-            >
-              <img
-                class="object-cover w-full h-48 border border-gray-300 rounded shadow-xl "
-                :src="post.image_url"
-                :alt="post.image_url"
-              />
-            </div>
-            <div
-              class="flex flex-col justify-between flex-1 px-2 py-3 bg-white"
-            >
-              <div class="flex-1">
-                <p class="text-xl font-semibold text-gray-900">
-                  {{ post.name }}
-                </p>
-              </div>
-            </div>
+            <base-grid-container
+              :image-url="post.image_url"
+              :name="post.name"
+            />
           </a>
+          <NuxtLink v-else :to="subhrefLink(post.id)" class="block">
+            <base-grid-container
+              :image-url="post.image_url"
+              :name="post.name"
+            />
+          </NuxtLink>
         </div>
       </div>
     </div>

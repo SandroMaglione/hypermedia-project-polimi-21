@@ -31,7 +31,10 @@
       class="w-16 h-16 p-4 bg-white border border-indigo-600 rounded-full shadow  hover:cursor-pointer"
       @click="isOpen = !isOpen"
     >
-      <img src="https://img.icons8.com/ios-filled/452/chat--v1.png" alt="" />
+      <img
+        src="https://img.icons8.com/ios-filled/452/chat--v1.png"
+        alt="Rocket Inc. chatbot"
+      />
     </div>
   </div>
 </template>

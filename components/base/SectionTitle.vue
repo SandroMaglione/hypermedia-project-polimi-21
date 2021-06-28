@@ -9,9 +9,9 @@
     <p class="mt-1 text-xl text-gray-600 sm:mt-2">
       {{ subtitle }}
     </p>
-    <a
+    <NuxtLink
       v-if="link != null"
-      :href="link.href"
+      :to="link.href"
       class="
         inline-flex
         mt-3
@@ -35,7 +35,7 @@
       "
     >
       {{ link.label }}
-    </a>
+    </NuxtLink>
   </div>
 </template>
 

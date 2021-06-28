@@ -1,40 +1,17 @@
 <template>
   <footer class="bg-white">
     <div
-      class="
-        px-0
-        py-12
-        mx-auto
-        max-w-7xl
-        sm:px-6
-        md:flex
-        md:items-center
-        md:justify-between
-        lg:px-8
-      "
+      class="px-0 py-12 mx-auto  max-w-7xl sm:px-6 md:flex md:items-center md:justify-between lg:px-8"
     >
       <!-- Footer information -->
       <div
-        class="
-          flex flex-col
-          items-center
-          justify-between
-          w-full
-          gap-8
-          mt-8
-          lg:mr-20
-          lg:flex-row
-        "
+        class="flex flex-col items-center justify-between w-full gap-8 mt-8  lg:mr-20 lg:flex-row"
       >
         <div>
           <p
-            class="
-              text-base text-center text-blue-400
-              underline
-              hover:text-blue-700
-            "
+            class="text-base text-center text-blue-400 underline  hover:text-blue-700"
           >
-            <a href="/privacy"> Privacy Policy </a>
+            <NuxtLink to="/privacy"> Privacy Policy </NuxtLink>
           </p>
         </div>
         <div>

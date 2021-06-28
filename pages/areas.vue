@@ -15,29 +15,21 @@
           v-for="area in postsAreas"
           :key="area.id"
           :style="{ backgroundImage: `url(${area.image_url})` }"
-          class="
-            relative
-            flex
-            items-center
-            justify-center
-            py-16
-            bg-cover
-            border border-gray-400
-            rounded-lg
-            shadow-lg
-            bg-gray-50
-          "
+          class="relative flex items-center justify-center py-16 bg-cover border border-gray-400 rounded-lg shadow-lg  bg-gray-50"
         >
           <div class="absolute inset-0 bg-blue-900 rounded-lg opacity-75"></div>
           <div class="z-50 text-center">
-            <a :href="hrefLink(area.id)" class="text-white hover:underline">
+            <NuxtLink
+              :to="hrefLink(area.id)"
+              class="text-white hover:underline"
+            >
               <h2 class="text-6xl font-bold tracking-wider text-white">
                 {{ area.name }}
               </h2>
               <p class="text-2xl font-medium text-white">
                 {{ area.description }}
               </p>
-            </a>
+            </NuxtLink>
           </div>
         </div>
       </div>

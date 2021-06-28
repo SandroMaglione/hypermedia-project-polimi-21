@@ -14,18 +14,7 @@
       <div class="pt-10 mt-6 mb-10 border-t border-gray-300">
         <div
           :style="{ backgroundImage: `url(${singleArea.image_url})` }"
-          class="
-            relative
-            flex
-            items-center
-            justify-center
-            mt-4
-            bg-gray-300 bg-cover
-            border border-gray-400
-            rounded-lg
-            shadow-xl
-            h-72
-          "
+          class="relative flex items-center justify-center mt-4 bg-gray-300 bg-cover border border-gray-400 rounded-lg shadow-xl  h-72"
         >
           <div class="absolute inset-0 bg-blue-900 rounded-lg opacity-75"></div>
           <h1 class="z-50 text-6xl font-black text-white">
@@ -38,6 +27,7 @@
       <section-feature-section
         title="Area description"
         :desc="singleArea.description"
+        image="https://thumbnails.trvl-media.com/7_uNlA_uKzmpaCE7bgD1eDpPvCE=/768x432/images.trvl-media.com/media/content/shared/images/travelguides/destination/178281/Cuatro-Torres-Business-Area-Ctba-51042.jpg"
       />
 
       <!-- List of products -->

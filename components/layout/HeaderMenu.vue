@@ -3,31 +3,20 @@
     <!-- Navigation menu -->
     <nav class="px-0 mx-auto max-w-7xl sm:px-6 lg:px-8" aria-label="Top">
       <div
-        class="
-          flex
-          items-center
-          justify-between
-          hidden
-          w-full
-          py-6
-          border-b border-blue-500
-          lg:items-center
-          lg:border-none
-          lg:flex
-        "
+        class="flex items-center justify-between hidden w-full py-6 border-b border-blue-500  lg:items-center lg:border-none lg:flex"
       >
         <div class="flex items-center flex-1">
           <div class="hidden ml-4 space-x-8 lg:block">
             <!-- List of navigation links (landmarks) in desktop (hidden on mobile) -->
-            <a
+            <NuxtLink
               v-for="link in navigation"
               :key="link.name"
-              :href="link.href"
+              :to="link.href"
               class="text-base font-medium text-blue-900 hover:text-blue-700"
               :class="linkSelectedClass(link.name)"
             >
               {{ link.name }}
-            </a>
+            </NuxtLink>
           </div>
         </div>
         <div class="flex-none">
@@ -66,27 +55,17 @@
         <!-- Open menu on mobile (hidden in desktop) -->
         <div
           v-if="isOpen"
-          class="
-            flex flex-col
-            justify-center
-            py-4
-            space-y-3
-            text-lg text-center
-            lg:text-base lg:text-left
-            lg:flex-wrap
-            lg:space-x-6
-            lg:hidden
-          "
+          class="flex flex-col justify-center py-4 space-y-3 text-lg text-center  lg:text-base lg:text-left lg:flex-wrap lg:space-x-6 lg:hidden"
         >
-          <a
+          <NuxtLink
             v-for="link in navigation"
             :key="link.name"
-            :href="link.href"
+            :to="link.href"
             class="text-base font-medium text-blue-600 hover:text-blue-800"
             :class="linkSelectedClass(link.name)"
           >
             {{ link.name }}
-          </a>
+          </NuxtLink>
         </div>
       </div>
     </nav>
